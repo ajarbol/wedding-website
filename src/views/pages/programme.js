@@ -1,95 +1,89 @@
 import { h } from 'preact';
 
-import { MarkupText, Text } from 'preact-i18n';
+import { Link } from 'preact-router';
 
-import PageWrapper from '../components/page-wrapper';
-import { isChrome } from '../components/browser-detection';
-
-import Title from '../components/title';
-
-export default props => {
-  return (
-    <PageWrapper className="page__programme">
-      <div className="content">
-        <Title><Text id="programme.title" /></Title>
-        <div className="info">
-          <p>
-            <Text id="programme.info.breakdown" />
-          </p>
-          <p>
-            <MarkupText id="programme.info.toastmaster" />
-          </p>
-          <p>
-            <Text id="programme.info.changes" />
-          </p>
-        </div>
-        <div className="arrow_devider">
-          <img className="arrow" alt="arrow" src="/img/arrow/arrow@3x.png" srcSet="/img/arrow/arrow.png, /img/arrow/arrow@2x.png 2x, /img/arrow/arrow@3x.png 3x" />
-          <img className="heart" alt="heart" src="/img/arrow/heart@3x.png" srcSet="/img/arrow/heart.png, /img/arrow/heart@2x.png 2x, /img/arrow/heart@3x.png 3x" />
-        </div>
-        <div className="timeline">
-          <article>
-            <h2>
-              <Text id="programme.schedule.saturday.title" />
-            </h2>
-            <ul>
-              <li>
-                <time>14:30</time>
-                <Text id="programme.schedule.saturday.items.0" />
-              </li>
-              <li>
-                <time>15:00</time>
-                <Text id="programme.schedule.saturday.items.1" />
-              </li>
-              <li>
-                <time>16:00</time>
-                <Text id="programme.schedule.saturday.items.2" />
-              </li>
-              <li>
-                <time>18:00</time>
-                <Text id="programme.schedule.saturday.items.3" />
-              </li>
-              <li>
-                <time>18:30</time>
-                <Text id="programme.schedule.saturday.items.4" />
-              </li>
-              <li>
-                <time>22:00</time>
-                <Text id="programme.schedule.saturday.items.5" />
-              </li>
-              <li>
-                <time>23:00</time>
-                <Text id="programme.schedule.saturday.items.6" />
-              </li>
-              <li>
-                <time>02:00</time>
-                <Text id="programme.schedule.saturday.items.7" />
-              </li>
-            </ul>
-          </article>
-          <article>
-            <h2>
-              <Text id="programme.schedule.sunday.title" />
-            </h2>
-            <ul>
-              <li>
-                <time>09:00</time>
-                <Text id="programme.schedule.sunday.items.0" />
-              </li>
-              <li>
-                <time>11:00</time>
-                <Text id="programme.schedule.sunday.items.1" />
-              </li>
-            </ul>
-          </article>
-        </div>
+export default () => (
+  <article className="page page__programme">
+    <div className="page__background" />
+    <Link href="/" className="hot_corner" />
+    <div className="content">
+      <img
+        alt="Programmet"
+        src="/img/headers/programme@3x.png"
+        srcSet="/img/headers/programme.png, /img/headers/programme@2x.png 2x, /img/headers/programme@3x.png 3x"
+      />
+      <div className="info">
+        <p>
+          Anton toast master Lorem Ipsum is simply dummy text of the printing
+          and typesetting industry. Lorem Ipsum has been the industry's standard
+          dummy text ever since the 1500s, when an unknown printer took a galley
+          of type and scrambled it to make a type specimen book. It has survived
+          not only five centuries, but also the leap into electronic
+          typesetting, remaining essentially unchanged. It was popularised in
+          the 1960s with the release of Letraset sheets containing Lorem Ipsum
+          passages, and more recently with desktop publishing software like
+          Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+      </div>
+      <div className="arrow_devider">
         <img
-          className="flowers"
-          alt="wedding_flowers"
-          src={`/img/flowers/programme_flowers.${ isChrome ? 'webp' : 'jpg'}`}
-          srcSet={`/img/flowers/programme_flowers.${ isChrome ? 'webp' : 'jpg'}, /img/flowers/programme_flowers@2x.${ isChrome ? 'webp' : 'jpg'} 2x, /img/flowers/programme_flowers@3x.${ isChrome ? 'webp' : 'jpg'} 3x`}
+          className="arrow"
+          alt="arrow"
+          src="/img/arrow/arrow@3x.png"
+          srcSet="/img/arrow/arrow.png, /img/arrow/arrow@2x.png 2x, /img/arrow/arrow@3x.png 3x"
+        />
+        <img
+          className="heart"
+          alt="heart"
+          src="/img/arrow/heart@3x.png"
+          srcSet="/img/arrow/heart.png, /img/arrow/heart@2x.png 2x, /img/arrow/heart@3x.png 3x"
         />
       </div>
-    </PageWrapper>
-  );
-}
+      <div className="timeline">
+        <article>
+          <h2>Lørdag den 23. Juni</h2>
+          <ul>
+            <li>
+              <time>14:30</time>Vielse i Dragsholm Slotskirke
+            </li>
+            <li>
+              <time>15:30</time>Reception og kage i parken
+            </li>
+            <li>
+              <time>16:30</time>Rundvisning
+            </li>
+            <li>
+              <time>18:30</time>Velkomstdrink
+            </li>
+            <li>
+              <time>19:00</time>Middag
+            </li>
+            <li>
+              <time>23:00</time>Bar og musik
+            </li>
+            <li>
+              <time>01:00</time>Natmad
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h2>Søndag</h2>
+          <ul>
+            <li>
+              <time>10:00</time>Brunch og hygge
+            </li>
+            <li>
+              <time>12:00</time>Gåtur i parken
+            </li>
+          </ul>
+        </article>
+      </div>
+      <img
+        className="flowers"
+        alt="wedding_flowers"
+        src="/img/flowers/programme_flowers@3x.png"
+        srcSet="/img/flowers/programme_flowers.png, /img/flowers/programme_flowers@2x.png 2x, /img/flowers/programme_flowers@3x.png 3x"
+      />
+    </div>
+  </article>
+);

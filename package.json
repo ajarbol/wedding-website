@@ -9,7 +9,16 @@
     "email": "luke.edwards05@gmail.com",
     "url": "https://lukeed.com"
   },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "scripts": {
+    "precommit": "lint-staged",
+    "lint-js": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
+    "fix-js": "yarn run lint-js --fix",
     "build": "webpack --env.production --config config/webpack",
     "start": "serve dist -s",
     "watch": "webpack-dev-server --config config/webpack"
@@ -18,13 +27,12 @@
     "ganalytics": "^2.0.1",
     "preact": "^8.2.5",
     "preact-css-transition-group": "^1.3.0",
-    "preact-i18n": "^1.2.0",
-    "preact-router": "^2.5.7",
-    "webfontloader": "^1.6.28"
+    "preact-router": "^2.5.7"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.3",
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-react-jsx": "^6.22.0",
     "babel-preset-babili": "^0.1.4",
@@ -33,11 +41,18 @@
     "clean-webpack-plugin": "^0.1.15",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.5",
+    "eslint": "^4.18.2",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard-for-preact": "^0.2.2",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
     "extract-text-webpack-plugin": "^3.0.0",
-    "html-webpack-plugin": "^2.30.1",
+    "html-webpack-plugin": "^1.1.6",
+    "lint-staged": "^4.0.0",
     "node-sass": "^4.5.0",
     "postcss-loader": "^2.0.6",
-    "preload-webpack-plugin": "^2.3.0",
+    "prettier": "^1.11.1",
     "sass-loader": "^6.0.7",
     "serve": "^6.0.6",
     "style-loader": "^0.18.2",
