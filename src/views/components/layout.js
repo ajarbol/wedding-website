@@ -2,8 +2,6 @@ import { h, Component } from 'preact';
 
 import CSSTransitionGroup from 'preact-css-transition-group';
 
-import Header from './header';
-
 import Programme from '../pages/programme';
 import Venue from '../pages/venue';
 import Gifts from '../pages/gifts';
@@ -18,23 +16,26 @@ const routes = {
   '/pictures': <Pictures />,
 };
 
-const scaleFactor = 0.02;
+// const scaleFactor = 0.02;
 
 export default class Layout extends Component {
-
   render() {
-    const windowRatio = window.innerHeight / window.innerWidth;
-    const margin =  (windowRatio < 1 ? scaleFactor * windowRatio : scaleFactor / windowRatio);
-    const [scaleX, scaleY] = windowRatio < 1 ? [1 - scaleFactor, 1 - scaleFactor - margin] : [1 - scaleFactor - margin, 1 - scaleFactor];
-  	return (
-			<main id="content">
+    /* const windowRatio = window.innerHeight / window.innerWidth;
+    const margin =
+      windowRatio < 1 ? scaleFactor * windowRatio : scaleFactor / windowRatio;
+    const [scaleX, scaleY] =
+      windowRatio < 1
+        ? [1 - scaleFactor, 1 - scaleFactor - margin]
+        : [1 - scaleFactor - margin, 1 - scaleFactor]; */
+    return (
+      <main id="content">
         <div
           className="layout_scale"
           style={{
             transform: routes[this.props.url] ? `scale(0.98)` : 'scale(1)',
           }}
         >
-				  <Hero />
+          <Hero />
         </div>
         <CSSTransitionGroup
           transitionName={{
@@ -48,7 +49,7 @@ export default class Layout extends Component {
         >
           {routes[this.props.url] || null}
         </CSSTransitionGroup>
-			</main>
-  	);
+      </main>
+    );
   }
 }
