@@ -1,0 +1,13 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+- For Mathilde <3
+
+/* TEAM */
+
+  Andreas Jarbol -- @ajarbol
+
+/* TECHNOLOGY COLOPHON */
+
+  (Preact + SASS + Webpack) =>
+    Route 53 => Cloudfront => S3

@@ -1,0 +1,71 @@
+/**
+ * `Venue` page component
+ */
+.page__venue
+  .content
+    z-index: $z-page-content
+    position: relative
+    padding: 40px 10px 80px
+    text-align: center
+    height: 100%
+    overflow-y: scroll
+    -webkit-overflow-scrolling: touch
+    img
+      width: 146px
+      margin-bottom: 20px
+      @media screen and (max-width: 321px)
+        width: 100px
+    .info
+      margin: 0 auto
+      max-width: $copy-max-width
+      display: flex
+      @media screen and (max-width: 567px)
+        width: 100%
+        flex-direction: column
+      address
+        flex-shrink: 0;
+        text-align: right
+        display: block
+        font-style: normal
+        margin: 0 30px 30px 0
+        @media screen and (max-width: 567px)
+          margin: 0 0 30px 0
+          text-align: center
+      .copy
+        p
+          font-size: 14px
+          text-align: left
+
+  .artwork
+    .front
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 800px
+      min-width: 500px
+      z-index: $z-art-lvl4
+      transition: bottom 0.3s ease-out
+    .castle
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 800px
+      min-width: 500px
+      z-index: $z-art-lvl3
+      transition: bottom 0.3s ease-out
+    .middle
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 800px
+      min-width: 500px
+      z-index: $z-art-lvl2
+      transition: bottom 0.3s ease-out
+    .back
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 800px
+      min-width: 500px
+      z-index: $z-art-lvl1
+      transition: bottom 0.3s ease-out
