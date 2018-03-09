@@ -3,12 +3,16 @@
  */
 
 .page
+  position: absolute
+  top: 0
   min-height: 100%
   height: 100%
   width: 100%
-  position: absolute
-  top: 0
   z-index: $z-page
+  .page_wrapper
+    height: 100%
+    clip-path: polygon(calc(100% - 80px) 0, 100% 80px, 100% 100%, 0 100%, 0 0)
+    background-color: $color-offwhite
   .hot_corner
     position: absolute
     z-index: $z-page-close
@@ -17,10 +21,3 @@
     height: 80px
     width: 80px
     outline: 0
-  .page__background
-    position: absolute
-    top: 0
-    width: 100%
-    height: 100%
-    clip-path: polygon(calc(100% - 80px) 0, 100% 80px, 100% 100%, 0 100%, 0 0)
-    background-color: $color-offwhite

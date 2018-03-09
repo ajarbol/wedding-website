@@ -27,11 +27,11 @@
     padding: 0 20px
     img
       width: 400px
+      height: 215px
       opacity: 0
       animation: fade-in 500ms ease-in-out forwards 1.5s
-      @keyframes fade-in
-        to
-          opacity: 1
+      @media screen and (max-width: 321px)
+        height: initial
     nav
       margin: 10px 0
       text-align: center
@@ -78,12 +78,13 @@
     z-index: $z-hero-nav
     position: absolute
     bottom: 0
-    animation: fade-in 500ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards 2.5s
+    animation: fade-in-up 500ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards 2.5s
+    transform: translate3d(0, 50px, 0)
     opacity: 0
     a
       padding: 8px 15px
     a:first-child
-      width: 100%
+      margin-right: auto
     a:last-child
       padding-left: 0
 
