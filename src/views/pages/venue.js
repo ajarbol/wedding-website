@@ -6,19 +6,31 @@ export default class Venue extends Component {
     super(props);
 
     this.state = {
-      paralaxRatio: 1,
+      paralaxYRatio: 1,
+      paralaxXRatio: 1,
     };
   }
 
   _onMouseMove(e) {
-    this.setState({ paralaxRatio: 1 - Math.abs(e.clientY / window.innerHeight)})
+    this.setState({
+      paralaxYRatio: 1 - Math.abs(e.clientY / window.innerHeight),
+      paralaxXRatio: 1 - Math.abs(e.clientX / window.innerWidth),
+    });
   }
 
   render() {
-    const backBottom = `-${this.state.paralaxRatio * 25}px`;
-    const middleBottom = `-${this.state.paralaxRatio * 37}px`;
-    const castleBottom = `-${this.state.paralaxRatio * 50}px`;
-    const frontBottom = `-${this.state.paralaxRatio * 100}px`;
+    const bottomPos = {
+      back: `${this.state.paralaxYRatio * 25}px`,
+      middle: `${this.state.paralaxYRatio * 37}px`,
+      castle: `${this.state.paralaxYRatio * 50}px`,
+      front: `${this.state.paralaxYRatio * 100}px`,
+    };
+    const leftPos = {
+      back: `${this.state.paralaxXRatio * 10}px`,
+      middle: `${this.state.paralaxXRatio * 15}px`,
+      castle: `${this.state.paralaxXRatio * 20}px`,
+      front: `${this.state.paralaxXRatio * 40}px`,
+    };
     return (
       <article className="page page__venue" onMouseMove={this._onMouseMove.bind(this)}>
         <Link href="/" className="hot_corner" />
@@ -46,10 +58,10 @@ export default class Venue extends Component {
             </div>
           </div>
           <div className="artwork">
-            <img alt="artwork-front" style={{ bottom: frontBottom }} className="front" src="/img/dragsholm/front_new.png" />
-            <img alt="artwork-castle" style={{ bottom: castleBottom }} className="castle" src="/img/dragsholm/watercolor_castle_new.png" />
-            <img alt="artwork-middle" style={{ bottom: middleBottom }} className="middle" src="/img/dragsholm/middle_new.png" />
-            <img alt="artwork-back" style={{ bottom: backBottom }} className="back" src="/img/dragsholm/back_new.png" />
+            <img alt="artwork-front" style={{ transform: `translate3d(${leftPos.front}, ${bottomPos.front}, 0)` }} className="front" src="/img/dragsholm/front_new.png" />
+            <img alt="artwork-castle" style={{ transform: `translate3d(${leftPos.castle}, ${bottomPos.castle}, 0)` }} className="castle" src="/img/dragsholm/watercolor_castle_new.png" />
+            <img alt="artwork-middle" style={{ transform: `translate3d(${leftPos.middle}, ${bottomPos.middle}, 0)` }} className="middle" src="/img/dragsholm/middle_new.png" />
+            <img alt="artwork-back" style={{ transform: `translate3d(${leftPos.back}, ${bottomPos.back}, 0)` }} className="back" src="/img/dragsholm/back_new.png" />
           </div>
         </div>
       </article>
