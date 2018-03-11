@@ -15,11 +15,14 @@ export default class Hero extends Component {
             <div className="links">
               <Link href="/programme">PROGRAMMET</Link>
             </div>
-             <div className="links">
-            <Link href="/venue">STEDET</Link>
+            <div className="links">
+              <Link href="/venue">STEDET</Link>
             </div>
             <div className="links">
-            <Link href="/gifts">GAVELISTEN</Link>
+              <Link href="/stay">OVERNATNING</Link>
+            </div>
+            <div className="links">
+              <Link href="/gifts">GAVELISTEN</Link>
             </div>
           </nav>
         </div>

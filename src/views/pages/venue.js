@@ -26,10 +26,10 @@ export default class Venue extends Component {
       front: `${this.state.paralaxYRatio * 100}px`,
     };
     const leftPos = {
-      back: `${this.state.paralaxXRatio * 10}px`,
-      middle: `${this.state.paralaxXRatio * 15}px`,
-      castle: `${this.state.paralaxXRatio * 20}px`,
-      front: `${this.state.paralaxXRatio * 40}px`,
+      back: `-${this.state.paralaxXRatio * 10}px`,
+      middle: `-${this.state.paralaxXRatio * 15}px`,
+      castle: `-${this.state.paralaxXRatio * 20}px`,
+      front: `-${this.state.paralaxXRatio * 40}px`,
     };
     return (
       <article className="page page__venue" onMouseMove={this._onMouseMove.bind(this)}>
@@ -45,18 +45,30 @@ export default class Venue extends Component {
                 Dragsholm Allé <br />
                 DK-4534 Hørve <br /><br />
                 <a href="tel:+45 5965 3300">+45 5965 3300</a><br />
-                <a href="mailto:info@dragsholm-slot.dk">info@dragsholm-slot.dk</a>
+                <a href="mailto:info@dragsholm-slot.dk">info@dragsholm-slot.dk</a><br />
+                <a href="https://goo.gl/maps/sjxrKuNsKRL2" target="_blank" rel="noopener">See på kort</a>
               </address>
               <div className="copy">
                 <p>
-                  Brylluppet finder sted på Dragsholm Slot.
+                  I vores jagt på at skabe de perfekte rammer for vores bryllup besøgte vi adskillige steder som hver især havde deres unikke charme.
+                  Valget faldt dog på et af Danmarks ældste Palatia; <a href="http://www.dragsholm-slot.dk/slotshotel/historie" target="_blank" rel="noopener">Dragsholm Slot</a>.
+                  Her faldt vi for slottes rustikke stemning, Odsherreds flotte grønne og åbne omgivelser, samt den fredsfyldte idyl langt fra storbyens larm.
+                  Endvidere har slottet haft stor betydning for Andreas&apos; familie, da det har været et festeligt samlingspunkt for bla. hans konfirmation og brødres barnedåb, med traditioner som skattejagt i slottes have organiseret af Morfar Knud.
+                  I forlængelse af dette inviterer vi derfor til bryllup på Dragsholm Slot.
                 </p>
                 <p>
-                  Slottet er et af Danmarks ældste, og har i mere end 800 år ligget i det smukke Odsherred. Imens har krige har raset, adelen har giftet sig i slotskirken og prominente fanger er blevet ført over slotsgården. I dag fungerer Dragsholm Slot som hotel med 34 dobbeltværelser, to anerkendte restauranter, selskabs-, kursus- og konferencevirksomhed samt kirke til bryllupper og gudstjenester. Vores stadige ambition er at byde vores gæster velkommen til en oplevelse af sammenhæng og helhed. Kunsten er at bevare og viderebringe den historiske autenticitet og områdets karakter og samtidig bringe slottet og dets kulturhistorie ind i det 21. århundredes funktionalitet og æstetik.
+                  Vielsen finder sted i slotskapellet, der med sin kapacitet på kun 100 personer vil danne en hyggelig atmosfære rundt om dagens vigtigste begivenhed.
+                  Kapellet er en integreret del af slottet og bindes sammen med Riddersalen, af 3 elegante stuer, hvor bryllupsfesten efterfølgende finder sted.
+                  Frisk luft kan nydes i slotsgården hvor der efter mørkets frembrud vil være et lille Sankt Hans bål.
+                </p>
+                <p>
+                  Det er umiddelbart være nemmest at komme frem i bil og man kan forvente en køretur på ca. 1 time 10 minutter fra København.
+                  Vi har gjort <Link href="/stay">overnatning</Link> mulig på slottet hvis man gerne vil nyde den fulde vinmenu.
                 </p>
               </div>
             </div>
           </div>
+          <div className="fade" />
           <div className="artwork">
             <img alt="artwork-front" style={{ transform: `translate3d(${leftPos.front}, ${bottomPos.front}, 0)` }} className="front" src="/img/dragsholm/front_new.png" />
             <img alt="artwork-castle" style={{ transform: `translate3d(${leftPos.castle}, ${bottomPos.castle}, 0)` }} className="castle" src="/img/dragsholm/watercolor_castle_new.png" />

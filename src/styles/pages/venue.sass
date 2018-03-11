@@ -5,7 +5,7 @@
   .content
     z-index: $z-page-content
     position: relative
-    padding: 40px 10px 80px
+    padding: 40px 0 80px
     text-align: center
     height: 100%
     overflow-y: scroll
@@ -27,15 +27,20 @@
         text-align: right
         display: block
         font-style: normal
-        margin: 0 30px 30px 0
+        margin: 0 20px 30px 10px
         @media screen and (max-width: 567px)
           margin: 0 0 30px 0
           text-align: center
       .copy
+        padding: 0 10px
+        background: linear-gradient(to top, transparent 0%, $color-offwhite 30%, $color-offwhite 100%);
+        @media screen and (max-width: 567px)
+          background: linear-gradient(to top, transparent 0%, $color-offwhite 40%, $color-offwhite 100%);
         p
           font-size: 14px
           text-align: left
-
+        p:not(:first-child)
+          margin: 20px 0 10px
   .artwork
     .front
       position: absolute

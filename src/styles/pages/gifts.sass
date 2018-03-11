@@ -2,11 +2,34 @@
  * `Gifts` page component
  */
 .page__gifts
-  .page_wrapper
-    background-color: #0E1F32
   .content
+    z-index: $z-page-content
     position: relative
-    padding-top: 40px
+    padding: 40px 10px 0
     text-align: center
-    img
+    height: 100%
+    overflow-y: scroll
+    -webkit-overflow-scrolling: touch
+    img.title
       width: 240px
+      margin-bottom: 20px
+      @media screen and (max-width: 321px)
+        width: 168px
+    .info
+      margin: 0 auto
+      max-width: $copy-max-width
+      p
+        font-size: 14px
+        text-align: left
+        margin: 20px 0
+      @media screen and (max-width: 567px)
+        width: 100%
+    .flowers
+      position: absolute
+      bottom: 40px
+      left: 0
+      right: 0
+      width: 100%
+      img
+        padding: 0 20px
+        width: 430px

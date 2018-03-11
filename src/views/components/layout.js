@@ -7,15 +7,17 @@ import Header from './header';
 import Programme from '../pages/programme';
 import Venue from '../pages/venue';
 import Gifts from '../pages/gifts';
-import Pictures from '../pages/pictures';
+//import Pictures from '../pages/pictures';
+import Stay from '../pages/stay';
 
 import Hero from '../pages/hero';
 
 const routes = {
   '/programme': <Programme />,
   '/venue': <Venue />,
+  '/stay': <Stay />,
   '/gifts': <Gifts />,
-  '/pictures': <Pictures />,
+  //'/pictures': <Pictures />,
 };
 
 const scaleFactor = 0.02;
