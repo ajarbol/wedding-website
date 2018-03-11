@@ -6,8 +6,8 @@ export default class Venue extends Component {
     super(props);
 
     this.state = {
-      paralaxYRatio: 1,
-      paralaxXRatio: 1,
+      paralaxYRatio: window && window.innerWidth < 600 ? 0 : 1,
+      paralaxXRatio: window && window.innerWidth < 600 ? 0 : 1,
     };
   }
 
@@ -68,7 +68,6 @@ export default class Venue extends Component {
               </div>
             </div>
           </div>
-          <div className="fade" />
           <div className="artwork">
             <img alt="artwork-front" style={{ transform: `translate3d(${leftPos.front}, ${bottomPos.front}, 0)` }} className="front" src="/img/dragsholm/front_new.png" />
             <img alt="artwork-castle" style={{ transform: `translate3d(${leftPos.castle}, ${bottomPos.castle}, 0)` }} className="castle" src="/img/dragsholm/watercolor_castle_new.png" />
