@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'production') {
 	}
 
 	// add Google Analytics
-	window.ga = new GAnalytics('UA-XXXXXXXX-X');
+	window.ga = new GAnalytics('UA-115506677-1');
 } else {
 	// use preact's devtools
 	require('preact/devtools');
