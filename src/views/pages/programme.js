@@ -17,7 +17,7 @@ export default props => {
             </p>
             <p>
               Der vil være en kort pause i programmet efter rundvisningen, inden vi byder på velkomstdrinks og middagen serveres.
-              Under middagen er vi meget glade for at Andreas&apos; bror, Anton har sagt ja til rollen som toastmaster.
+              Under middagen er vi meget glade for at Andreas&apos; bror, <a href="https://www.facebook.com/anton.jarbol" target="_blank" className="name" rel="noopener">Anton</a>, har sagt ja til rollen som toastmaster.
               Indslag skal således koordineres med ham via e-mail: <a href="mailto:toastmaster@andreas-mathilde.com">toastmaster@andreas-mathilde.com</a> senest den <b>20. Juni</b>.
             </p>
             <p>

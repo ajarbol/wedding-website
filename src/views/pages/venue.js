@@ -44,16 +44,16 @@ export default class Venue extends Component {
                 </h2>
                 Dragsholm Allé <br />
                 DK-4534 Hørve <br /><br />
-                <a href="tel:+45 5965 3300">+45 5965 3300</a><br />
+                <a href="tel:+45 5965 3300" className="name">+45 5965 3300</a><br />
                 <a href="mailto:info@dragsholm-slot.dk">info@dragsholm-slot.dk</a><br />
-                <a href="https://goo.gl/maps/sjxrKuNsKRL2" target="_blank" rel="noopener">See på kort</a>
+                <a href="https://goo.gl/maps/sjxrKuNsKRL2" target="_blank" rel="noopener" className="name">See på kort</a>
               </address>
               <div className="copy">
                 <p>
                   I vores jagt på at skabe de perfekte rammer for vores bryllup besøgte vi adskillige steder som hver især havde deres unikke charme.
-                  Valget faldt dog på et af Danmarks ældste Palatia; <a href="http://www.dragsholm-slot.dk/slotshotel/historie" target="_blank" rel="noopener">Dragsholm Slot</a>.
+                  Valget faldt dog på et af Danmarks ældste Palatia; <a href="http://www.dragsholm-slot.dk/slotshotel/historie" target="_blank" className="name" rel="noopener">Dragsholm Slot</a>.
                   Her faldt vi for slottes rustikke stemning, Odsherreds flotte grønne og åbne omgivelser, samt den fredsfyldte idyl langt fra storbyens larm.
-                  Endvidere har slottet haft stor betydning for Andreas&apos; familie, da det har været et festeligt samlingspunkt for bla. hans konfirmation og brødres barnedåb, med traditioner som skattejagt i slottes have organiseret af Morfar Knud.
+                  Endvidere har slottet haft stor betydning for Andreas&apos; familie, da det har været et festligt samlingspunkt for bla. Andreas&apos; konfirmation og brødres barnedåb, med traditioner som skattejagt i slottes have organiseret af <a href="https://www.facebook.com/knud.skytte" target="_blank" className="name" rel="noopener">Morfar Knud</a>.
                   I forlængelse af dette inviterer vi derfor til bryllup på Dragsholm Slot.
                 </p>
                 <p>
@@ -62,8 +62,8 @@ export default class Venue extends Component {
                   Frisk luft kan nydes i slotsgården hvor der efter mørkets frembrud vil være et lille Sankt Hans bål.
                 </p>
                 <p>
-                  Det er umiddelbart være nemmest at komme frem i bil og man kan forvente en køretur på ca. 1 time 10 minutter fra København.
-                  Vi har gjort <Link href="/stay">overnatning</Link> mulig på slottet hvis man gerne vil nyde den fulde vinmenu.
+                  Det er umiddelbart være nemmest at komme frem til stedet i bil og man kan forvente en køretur på ca. 1 time 10 minutter fra København.
+                  Vi har gjort <Link href="/stay" className="name">overnatning</Link> mulig på slottet, hvis man gerne vil nyde den fulde vinmenu.
                 </p>
               </div>
             </div>

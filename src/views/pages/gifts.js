@@ -12,7 +12,7 @@ export default props => {
           <div className="info">
             <p>
               Vores ønskeliste er stadig under udarbejdning men kan findes her på siden snarest.
-              Vi er glade for at have Mathildes bror Lasse og hans kæreste Maria som gavekoordinatore.
+              Vi er glade for at have Mathildes bror, Lasse, og hans kæreste, <a href="https://www.facebook.com/profile.php?id=100003710135467" className="name" target="_blank" rel="noopener">Maria</a>, som gavekoordinatore.
             </p>
             <p>
               De kan fanges på e-mail: <a href="mailto:gavekoordinator@andreas-mathilde.com">gavekoordinator@andreas-mathilde.com</a>.
