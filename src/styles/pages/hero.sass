@@ -13,7 +13,8 @@
     background-size: cover
     background-position: center
     opacity: 0
-    animation: fade-in 300ms ease-in-out forwards 1s
+    transform: scale(1.03)
+    animation: background-in 500ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards 450ms
   .hero__title
     display: flex
     flex-direction: column
@@ -29,7 +30,7 @@
       width: 400px
       height: 215px
       opacity: 0
-      animation: fade-in 500ms ease-in-out forwards 1.5s
+      animation: fade-in 800ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards 1450ms
       @media screen and (max-width: 567px)
         height: initial
     nav
@@ -79,7 +80,7 @@
     z-index: $z-hero-nav
     position: absolute
     bottom: 0
-    animation: fade-in-up 500ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards 2.5s
+    animation: fade-in-up 500ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards 2.2s
     transform: translate3d(0, 50px, 0)
     opacity: 0
     overflow-x: hidden
