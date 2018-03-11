@@ -10,6 +10,8 @@
     height: 100%
     overflow-y: scroll
     -webkit-overflow-scrolling: touch
+    @media screen and (max-width: 567px)
+      padding: 40px 0 120px
     img
       width: 146px
       margin-bottom: 20px
@@ -23,58 +25,65 @@
         width: 100%
         flex-direction: column
       address
-        flex-shrink: 0;
+        flex-shrink: 0
         text-align: right
         display: block
         font-style: normal
-        margin: 0 20px 30px 10px
+        padding: 20px 20px 30px 10px
         @media screen and (max-width: 567px)
-          margin: 0 0 30px 0
+          background-color: $color-offwhite
+          padding: 0 0 30px 0
           text-align: center
       .copy
-        padding: 0 10px
-        background: linear-gradient(to top, rgba(245, 244, 241, 0) 0%, rgba(245, 244, 241, 1) 30%, rgba(245, 244, 241, 1) 100%);
+        padding: 10px
+        background: linear-gradient(to top, rgba(245, 244, 241, 0) 0%, rgba(245, 244, 241, 1) 30%, rgba(245, 244, 241, 1) 100%)
         @media screen and (max-width: 567px)
-          background: linear-gradient(to top, rgba(245, 244, 241, 0) 0%, rgba(245, 244, 241, 1) 40%, rgba(245, 244, 241, 1) 100%);
+          background: linear-gradient(to top, rgba(245, 244, 241, 0) 0%, rgba(245, 244, 241, 1) 40%, rgba(245, 244, 241, 1) 100%)
         p
-          font-size: 14px
+          font-size: 16px
           text-align: left
+          @media screen and (max-width: 321px)
+            font-size: 14px
         p:not(:first-child)
           margin: 20px 0 10px
   .artwork
     .front
+      backface-visibility: hidden
       position: absolute
       bottom: 0
       left: 0
       width: 800px
       min-width: 500px
       z-index: $z-art-lvl4
-      transfrom: translate3d(0);
+      transfrom: translate3d(0)
       transition: all 0.3s ease-out
     .castle
+      backface-visibility: hidden
       position: absolute
       bottom: 0
       left: 0
       width: 800px
       min-width: 500px
       z-index: $z-art-lvl3
-      transfrom: translate3d(0);
+      transfrom: translate3d(0)
       transition: all 0.3s ease-out
     .middle
+      backface-visibility: hidden
       position: absolute
       bottom: 0
       left: 0
       width: 800px
       min-width: 500px
       z-index: $z-art-lvl2
-      transfrom: translate3d(0);
+      transfrom: translate3d(0)
       transition: all 0.3s ease-out
     .back
+      backface-visibility: hidden
       position: absolute
       bottom: 0
       left: 0
       width: 800px
       min-width: 500px
       z-index: $z-art-lvl1
-      transfrom: translate3d(0);
+      transfrom: translate3d(0)
       transition: all 0.3s ease-out

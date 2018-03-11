@@ -20,26 +20,28 @@ const routes = {
   //'/pictures': <Pictures />,
 };
 
-const scaleFactor = 0.02;
+const scalePix = 20;
 
 export default class Layout extends Component {
 
   render() {
-    const windowRatio = window.innerHeight / window.innerWidth;
-    const margin =  (windowRatio < 1 ? scaleFactor * windowRatio : scaleFactor / windowRatio);
-    const [scaleX, scaleY] = windowRatio < 1 ? [1 - scaleFactor, 1 - scaleFactor - margin] : [1 - scaleFactor - margin, 1 - scaleFactor];
+    const [scaleY, scaleX] = [
+      1 - (scalePix / window.innerHeight),
+      1 - (scalePix / window.innerWidth)
+    ];
   	const url = this.props.path || this.props.url;
     return (
-			<main id="content">
+			<div id="content" style={{ overflowY: routes[url] ? 'hidden' : 'auto' }}>
         <div
           className="layout_scale"
           style={{
-            transform: routes[url] ? `scale(0.98)` : 'scale(1)',
+            transform: routes[url] ? `scale(${scaleX}, ${scaleY})` : 'scale(1)',
           }}
         >
 				  <Hero />
         </div>
         <CSSTransitionGroup
+          component="main"
           transitionName={{
             enter: 'layout__page_transition-enter',
             enterActive: 'layout__page_transition-enter-active',
@@ -51,7 +53,7 @@ export default class Layout extends Component {
         >
           {routes[url] || null}
         </CSSTransitionGroup>
-			</main>
+			</div>
   	);
   }
 }
