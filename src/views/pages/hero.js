@@ -3,6 +3,19 @@ import { Link } from 'preact-router';
 
 import HeroDevider from '../components/hero-devider';
 
+const imagePreloads = [
+  '/headers/gifts@3x.png',
+  '/headers/programme@3x.png',
+  '/headers/stay@3x.png',
+  '/headers/venue@3x.png',
+  '/flowers/gift_flowers@3x.png',
+  '/arrow/arrow@3x.png',
+  '/arrow/heart@3x.png',
+  '/flowers/programme_flowers@3x.png',
+  '/stars/a1.png',
+  '/stars/b1.png'
+];
+
 export default class Hero extends Component {
   render () {
     return (
@@ -43,6 +56,9 @@ export default class Hero extends Component {
             </svg>
           </a>
         </aside>
+        <div className="preload">
+          {imagePreloads.map(ip => <img alt="preload" src={`/img/${ip}`} />)}
+        </div>
       </div>
     );
   }

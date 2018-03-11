@@ -28,12 +28,13 @@ export default class Layout extends Component {
     const windowRatio = window.innerHeight / window.innerWidth;
     const margin =  (windowRatio < 1 ? scaleFactor * windowRatio : scaleFactor / windowRatio);
     const [scaleX, scaleY] = windowRatio < 1 ? [1 - scaleFactor, 1 - scaleFactor - margin] : [1 - scaleFactor - margin, 1 - scaleFactor];
-  	return (
+  	const url = this.props.path || this.props.url;
+    return (
 			<main id="content">
         <div
           className="layout_scale"
           style={{
-            transform: routes[this.props.url] ? `scale(0.98)` : 'scale(1)',
+            transform: routes[url] ? `scale(0.98)` : 'scale(1)',
           }}
         >
 				  <Hero />
@@ -48,7 +49,7 @@ export default class Layout extends Component {
           transitionEnterTimeout={350}
           transitionLeaveTimeout={350}
         >
-          {routes[this.props.url] || null}
+          {routes[url] || null}
         </CSSTransitionGroup>
 			</main>
   	);
