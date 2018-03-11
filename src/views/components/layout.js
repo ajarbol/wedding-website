@@ -1,4 +1,5 @@
 import { h, Component } from 'preact';
+import { route } from 'preact-router';
 
 import CSSTransitionGroup from 'preact-css-transition-group';
 
@@ -23,6 +24,23 @@ const routes = {
 const scalePix = 20;
 
 export default class Layout extends Component {
+
+  componentDidMount() {
+    document.addEventListener('keydown', this._onKeyDown, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this._onKeyDown, false);
+  }
+
+  _onKeyDown(e) {
+    switch (e.keyCode) {
+      case 27: // esc
+        route('/');
+        break;
+      default: break;
+    }
+  }
 
   render() {
     const [scaleY, scaleX] = [
