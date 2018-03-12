@@ -2,6 +2,7 @@ const { join } = require('path');
 const webpack = require('webpack');
 const ExtractText = require('extract-text-webpack-plugin');
 const SWPrecache = require('sw-precache-webpack-plugin');
+const Critical = require("html-critical-webpack-plugin");
 const Clean = require('clean-webpack-plugin');
 const Copy = require('copy-webpack-plugin');
 const HTML = require('html-webpack-plugin');
@@ -23,10 +24,23 @@ module.exports = isProd => {
 
 	if (isProd) {
 		plugins.push(
-			new webpack.LoaderOptionsPlugin({ minimize:true }),
+			new webpack.LoaderOptionsPlugin({ minimize: true }),
 			new webpack.optimize.ModuleConcatenationPlugin(),
 			new webpack.optimize.UglifyJsPlugin(uglify),
 			new ExtractText('styles.[hash].css'),
+			new Critical({
+				base: join(root, 'dist/'),
+				src: 'index.html',
+				dest: 'index.html',
+				inline: true,
+				minify: true,
+				extract: true,
+				width: 375,
+				height: 565,
+				penthouse: {
+				  blockJSRequests: false,
+				}
+			}),
 			new SWPrecache({
 				minify: true,
 				filename: 'sw.js',

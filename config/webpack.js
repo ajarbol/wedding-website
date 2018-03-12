@@ -46,7 +46,7 @@ module.exports = env => {
 				}
 			}, {
 				test: /\.(sass|scss)$/,
-				use: isProd ? ExtractText.extract({ fallback:'style-loader', use:styles }) : styles
+				use: isProd ? ExtractText.extract({ fallback:'style-loader', use: styles }) : styles
 			}]
 		},
 		plugins: setup(isProd),
