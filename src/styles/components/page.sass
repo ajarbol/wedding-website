@@ -12,8 +12,9 @@
   overflow: hidden;
   .page_wrapper
     height: 100%
-    clip-path: polygon(calc(100% - 80px) 0, 100% 80px, 100% 100%, 0 100%, 0 0)
     background-color: $color-offwhite
+    &.clip
+      clip-path: polygon(calc(100% - 80px) 0, 100% 80px, 100% 100%, 0 100%, 0 0)
   .hot_corner
     position: absolute
     z-index: $z-page-close
@@ -22,3 +23,29 @@
     height: 80px
     width: 80px
     outline: 0
+  .ie_back
+    position: absolute
+    top: 30px
+    right: 30px
+    border: 1px solid transparent
+    padding: 10px 8px 5px
+    z-index: $z-page-back
+    background-color: rgba(245,244,241, 0.5)
+    transition: background 1s ease;
+    svg
+      width: 29px
+      g
+        stroke: $color-cta-green
+    @media screen and (max-width: 567px)
+      top: 10px
+      right: 10px
+      padding: 4px 6px 0
+      svg
+        width: 23px
+
+  .ie_back:hover
+    border: 1px solid $color-white
+    background-color: $color-cta-green
+    svg
+      g
+        stroke: $color-white

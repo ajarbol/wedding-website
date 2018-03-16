@@ -1,5 +1,6 @@
 import { render } from 'preact';
 import GAnalytics from 'ganalytics';
+import WebFont from 'webfontloader';
 import './index.sass';
 
 let App;
@@ -11,6 +12,12 @@ const init = () => {
 }
 
 init();
+
+WebFont.load({
+  google: {
+    families: ['Open+Sans:300,400']
+  }
+});
 
 if (process.env.NODE_ENV === 'production') {
 	// cache all assets if browser supports serviceworker

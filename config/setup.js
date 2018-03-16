@@ -2,7 +2,7 @@ const { join } = require('path');
 const webpack = require('webpack');
 const ExtractText = require('extract-text-webpack-plugin');
 const SWPrecache = require('sw-precache-webpack-plugin');
-const Critical = require("html-critical-webpack-plugin");
+const Preload = require('preload-webpack-plugin');
 const Clean = require('clean-webpack-plugin');
 const Copy = require('copy-webpack-plugin');
 const HTML = require('html-webpack-plugin');
@@ -28,24 +28,20 @@ module.exports = isProd => {
 			new webpack.optimize.ModuleConcatenationPlugin(),
 			new webpack.optimize.UglifyJsPlugin(uglify),
 			new ExtractText('styles.[hash].css'),
-			new Critical({
-				base: join(root, 'dist/'),
-				src: 'index.html',
-				dest: 'index.html',
-				inline: true,
-				minify: true,
-				extract: true,
-				width: 375,
-				height: 565,
-				penthouse: {
-				  blockJSRequests: false,
-				}
-			}),
+			new Preload({
+		    rel: 'preload',
+		    include: ['vendor', 'app', 'styles'],
+		    as(entry) {
+		      if (/\.css$/.test(entry)) return 'style';
+		      if (/\.woff$/.test(entry)) return 'font';
+		      return 'script';
+		    }
+		  }),
 			new SWPrecache({
-				minify: true,
+				minify: false,
 				filename: 'sw.js',
-				dontCacheBustUrlsMatching: /./,
-				navigateFallback: 'index.html',
+				//dontCacheBustUrlsMatching: /^(?=.*\.\w{1,7}$)/,
+				navigateFallback: '/',
 				staticFileGlobsIgnorePatterns: [/\.map$/]
 			})
 		);

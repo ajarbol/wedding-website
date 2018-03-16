@@ -10,4 +10,4 @@
 /* TECHNOLOGY COLOPHON */
 
   (Preact + SASS + Webpack) =>
-    Route 53 => Cloudfront => S3
+    S3 => Cloudfront => Route 53 => You

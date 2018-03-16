@@ -1,9 +1,13 @@
 import { h, Component } from 'preact';
 import { route } from 'preact-router';
 
+import { IntlProvider } from 'preact-i18n';
+
 import CSSTransitionGroup from 'preact-css-transition-group';
 
-import Header from './header';
+import enLocale from '../locals/en-GB';
+
+import Footer from '../components/footer';
 
 import Programme from '../pages/programme';
 import Venue from '../pages/venue';
@@ -13,17 +17,17 @@ import Stay from '../pages/stay';
 
 import Hero from '../pages/hero';
 
-const routes = {
-  '/programme': <Programme />,
-  '/venue': <Venue />,
-  '/stay': <Stay />,
-  '/gifts': <Gifts />,
-  //'/pictures': <Pictures />,
-};
-
 const scalePix = 20;
 
 export default class Layout extends Component {
+
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      locale: this._getLocale(props.l || 'da'),
+    };
+  }
 
   componentDidMount() {
     document.addEventListener('keydown', this._onKeyDown, false);
@@ -42,36 +46,64 @@ export default class Layout extends Component {
     }
   }
 
+  _getLocale(l) {
+    switch(l.toLowerCase()) {
+      case 'en':
+        return enLocale;
+      default:
+        return null;
+    }
+  }
+
+  _getPage() {
+    const url = this.props.path || this.props.url;
+    switch(url.toLowerCase()) {
+      case '/programme':
+        return <Programme />;
+      case '/venue':
+        return <Venue />;
+      case '/stay':
+        return <Stay />;
+      case '/gifts':
+        return <Gifts />;
+      default:
+        return null;
+    }
+  }
+
   render() {
     const [scaleY, scaleX] = [
       1 - (scalePix / window.innerHeight),
       1 - (scalePix / window.innerWidth)
     ];
-  	const url = this.props.path || this.props.url;
+    const page = this._getPage();
     return (
-			<div id="content" style={{ overflowY: routes[url] ? 'hidden' : 'auto' }}>
-        <div
-          className="layout_scale"
-          style={{
-            transform: routes[url] ? `scale(${scaleX}, ${scaleY})` : 'scale(1)',
-          }}
-        >
-				  <Hero />
+			<IntlProvider id="content" definition={this.state.locale}>
+        <div id="content" style={{ overflowY: page ? 'hidden' : 'auto' }}>
+          <div
+            className="layout_scale"
+            style={{
+              transform: page ? `scale(${scaleX}, ${scaleY})` : 'scale(1)',
+            }}
+          >
+  				  <Hero />
+            <Footer onLocaleChange={l => this.setState({ locale: this._getLocale(l) })} />
+          </div>
+          <CSSTransitionGroup
+            component="main"
+            transitionName={{
+              enter: 'layout__page_transition-enter',
+              enterActive: 'layout__page_transition-enter-active',
+              leave: 'layout__page_transition-leave',
+              leaveActive: 'layout__page_transition-leave-active',
+            }}
+            transitionEnterTimeout={350}
+            transitionLeaveTimeout={350}
+          >
+            {page}
+          </CSSTransitionGroup>
         </div>
-        <CSSTransitionGroup
-          component="main"
-          transitionName={{
-            enter: 'layout__page_transition-enter',
-            enterActive: 'layout__page_transition-enter-active',
-            leave: 'layout__page_transition-leave',
-            leaveActive: 'layout__page_transition-leave-active',
-          }}
-          transitionEnterTimeout={350}
-          transitionLeaveTimeout={350}
-        >
-          {routes[url] || null}
-        </CSSTransitionGroup>
-			</div>
+			</IntlProvider>
   	);
   }
 }
