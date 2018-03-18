@@ -67,31 +67,18 @@ export default class Venue extends Component {
               <a href="tel:+45 5965 3300" className="name">+45 5965 3300</a><br />
               <a href="mailto:info@dragsholm-slot.dk">info@dragsholm-slot.dk</a><br />
               <a href="https://goo.gl/maps/sjxrKuNsKRL2" target="_blank" rel="noopener" className="name">
-                <Text id="venue.map">See på kort</Text>
+                <Text id="venue.map" />
               </a>
             </address>
             <div className="copy">
               <p>
-                <MarkupText id="venue.copy.intro">
-                  I vores jagt på at skabe de perfekte rammer for vores bryllup besøgte vi adskillige steder som hver især havde deres unikke charme.
-                  Valget faldt dog på et af Danmarks ældste Palatia; <a href="http://www.dragsholm-slot.dk/slotshotel/historie" target="_blank" className="name" rel="noopener">Dragsholm Slot</a>.
-                  Her faldt vi for slottes rustikke stemning, Odsherreds flotte grønne og åbne omgivelser, samt den fredsfyldte idyl langt fra storbyens larm.
-                  Endvidere har slottet haft stor betydning for Andreas&apos; familie, da det har været et festligt samlingspunkt for bla. Andreas&apos; konfirmation og brødres barnedåb, med traditioner som skattejagt i slottes have organiseret af <a href="https://www.facebook.com/knud.skytte" target="_blank" className="name" rel="noopener">Morfar Knud</a>.
-                  I forlængelse af dette inviterer vi derfor til bryllup på Dragsholm Slot.
-                </MarkupText>
+                <MarkupText id="venue.copy.intro" />
               </p>
               <p>
-                <Text id="venue.copy.ceremony">
-                  Vielsen finder sted i slotskapellet, der med sin kapacitet på kun 100 personer vil danne en hyggelig atmosfære rundt om dagens vigtigste begivenhed.
-                  Kapellet er en integreret del af slottet og bindes sammen med Riddersalen, af 3 elegante stuer, hvor bryllupsfesten efterfølgende finder sted.
-                  Frisk luft kan nydes i slotsgården hvor der efter mørkets frembrud vil være et lille Sankt Hans bål.
-                </Text>
+                <Text id="venue.copy.ceremony" />
               </p>
               <p>
-                <MarkupText id="venue.copy.stay">
-                  Det er umiddelbart være nemmest at komme frem til stedet i bil og man kan forvente en køretur på ca. 1 time 10 minutter fra København.
-                  Vi har gjort <Link href="/stay" className="name">overnatning</Link> mulig på slottet, hvis man gerne vil nyde den fulde vinmenu.
-                </MarkupText>
+                <MarkupText id="venue.copy.stay" />
               </p>
             </div>
           </div>

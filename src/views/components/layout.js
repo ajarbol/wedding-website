@@ -6,6 +6,7 @@ import { IntlProvider } from 'preact-i18n';
 import CSSTransitionGroup from 'preact-css-transition-group';
 
 import enLocale from '../locals/en-GB';
+import daLocale from '../locals/da-DK';
 
 import Footer from '../components/footer';
 
@@ -23,9 +24,15 @@ export default class Layout extends Component {
 
   constructor(props) {
     super(props);
-  
+
+    const locale = props.l || (window.sessionStorage && window.sessionStorage['l']) || 'da';
+    if (props.l && window.sessionStorage) {
+      // persist locale for the browser session
+      window.sessionStorage['l'] = props.l;
+    }
+
     this.state = {
-      locale: this._getLocale(props.l || 'da'),
+      locale,
     };
   }
 
@@ -51,7 +58,7 @@ export default class Layout extends Component {
       case 'en':
         return enLocale;
       default:
-        return null;
+        return daLocale;
     }
   }
 
@@ -78,7 +85,7 @@ export default class Layout extends Component {
     ];
     const page = this._getPage();
     return (
-			<IntlProvider id="content" definition={this.state.locale}>
+			<IntlProvider id="content" definition={this._getLocale(this.state.locale)}>
         <div id="content" style={{ overflowY: page ? 'hidden' : 'auto' }}>
           <div
             className="layout_scale"

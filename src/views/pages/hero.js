@@ -29,22 +29,22 @@ export default () => (
       <nav>
         <div className="links">
           <Link href="/programme">
-            <Text id="hero.links.programme">PROGRAMMET</Text>
+            <Text id="hero.links.programme" />
           </Link>
         </div>
         <div className="links">
           <Link href="/venue">
-            <Text id="hero.links.venue">STEDET</Text>
+            <Text id="hero.links.venue" />
           </Link>
         </div>
         <div className="links">
           <Link href="/stay">
-            <Text id="hero.links.stay">OVERNATNING</Text>
+            <Text id="hero.links.stay" />
           </Link>
         </div>
         <div className="links">
           <Link href="/gifts">
-            <Text id="hero.links.gifts">GAVELISTEN</Text>
+            <Text id="hero.links.gifts" />
           </Link>
         </div>
       </nav>

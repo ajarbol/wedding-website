@@ -6,7 +6,8 @@ import PageWrapper from '../components/page-wrapper';
 const topStars = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'a13', 'a14', 'a15'];
 const bottomStars = ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10', 'b11'];
 
-export default props => {
+export default (props, bla) => {
+  console.log(props, bla);
   return (
     <PageWrapper className="page__stay">
       <div className="content">
@@ -14,26 +15,16 @@ export default props => {
         <div className="info">
           <div className="copy">
             <p>
-              <Text id="stay.copy.perks">
-                Vi har reserveret samtlige værelser på slottet, så dem der har lyst til at være sammen med os og danse til den lyse morgen, har mulighed for at overnatte og deltage i vores bryllupsbruch dagen efter.
-              </Text>
+              <Text id="stay.copy.perks" />
             </p>
             <p>
-              <Text id="stay.copy.checkin">
-                Der vil være checkin fra kl. 15, men vi anbefaler, at i checker ind efter rundvisningen på slottet.
-                Checkout er formiddagen efter, kl. 11.
-              </Text>
+              <Text id="stay.copy.checkin" />
             </p>
             <p>
-              <MarkupText id="stay.copy.price">
-                Overnatingen koster 1000 kr. per person i dobbletværrelse og 1350 kr. i enkeltværrelse.
-                Booking sker ved at skrive til Dragsholm Slot på e-mail: <a href="mailto:info@dragsholm-slot.dk">info@dragsholm-slot.dk</a> og angive vores booking nummer som kan findes i invitationen.
-              </MarkupText>
+              <MarkupText id="stay.copy.price" />
             </p>
             <p>
-              <MarkupText id="stay.copy.deadline">
-                I bedes booke senest den <b>23. marts</b>.
-              </MarkupText>
+              <MarkupText id="stay.copy.deadline" />
             </p>
           </div>
           <div className="stary_artwork">
