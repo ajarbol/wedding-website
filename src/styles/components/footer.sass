@@ -1,12 +1,13 @@
 .footer
   display: flex
-  width: 100%
+  width: calc(100% + 10px);
   height: 80px
   align-items: flex-end
   justify-content: space-between
   z-index: $z-hero-nav
   position: absolute
-  bottom: 0
+  bottom: -5px
+  left: -5px
   animation: fade-in-up 500ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards 2.2s
   transform: translate3d(0, 50px, 0)
   opacity: 0
@@ -20,17 +21,17 @@
 
   .bubble
     position: absolute
-    height: 95px
-    width: 95px
-    border: 2px solid $color-white
+    height: 100px
+    width: 100px
+    border: 5px solid $color-white
     border-radius: 50%
     overflow: hidden
     &.left
       left: -20px;
-      top: -35px;
+      top: -40px;
     &.right
       right: -35px;
-      top: -43px;
+      top: -48px;
 
 .footer__social_left_transition-enter,
 .footer__social_left_transition-leave
@@ -42,20 +43,20 @@
 .footer__social_left_transition-enter,
 .footer__social_right_transition-enter
   will-change: transform
-  opacity: 0
-  transform: scale(0.3)
-  transition: all 350ms cubic-bezier(0.630, 0.005, 0.135, 1.330)
+  //opacity: 0
+  transform: scale(0)
+  transition: all 350ms cubic-bezier(0.165, 0.84, 0.44, 1)
 .footer__social_left_transition-enter-active,
 .footer__social_right_transition-enter-active
-  opacity: 1
+  //opacity: 1
   transform: scale(1)
 .footer__social_left_transition-leave,
 .footer__social_right_transition-leave
   will-change: transform
-  transition: all 350ms cubic-bezier(0.630, 0.005, 0.135, 1.330)
-  opacity: 1 
+  transition: all 350ms cubic-bezier(0.165, 0.84, 0.44, 1)
+  //opacity: 1 
   transform: scale(1)
 .footer__social_left_transition-leave-active,
 .footer__social_right_transition-leave-active
-  opacity: 0
-  transform: scale(0.3)
+  //opacity: 0
+  transform: scale(0)

@@ -33,11 +33,13 @@ export default class Layout extends Component {
 
     this.state = {
       locale,
+      hasOverflow: true,
     };
   }
 
   componentDidMount() {
     document.addEventListener('keydown', this._onKeyDown, false);
+    setTimeout(() => this.setState({ hasOverflow: false }), 2500);
   }
 
   componentWillUnmount() {
@@ -85,10 +87,10 @@ export default class Layout extends Component {
       1 - (scalePix / window.innerWidth)
     ];
     const page = this._getPage();
-    const { locale } = this.state;
+    const { locale, hasOverflow } = this.state;
     return (
 			<IntlProvider definition={this._getLocale(locale)}>
-        <div id="content" style={{ overflowY: page ? 'hidden' : 'auto' }}>
+        <div id="content" style={{ overflowY: hasOverflow ? 'hidden' : 'initial' }}>
           <div
             className="layout_scale"
             style={{
@@ -99,7 +101,7 @@ export default class Layout extends Component {
               href={locale === 'da' ? '?l=en' : '?l=da'}
               className="locale"
             >
-              {locale === 'da' ? 'Say what?' : 'På dansk'}
+              {locale === 'da' ? 'Say what?' : 'På dansk, tak!'}
             </a>
   				  <Hero />
             <Footer />

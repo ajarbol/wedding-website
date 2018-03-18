@@ -1,13 +1,14 @@
 export default {
   hero: {
     links: {
-      programme: 'PROGRAMMET',
-      venue: 'STEDET',
-      stay: 'OVERNATNING',
-      gifts: 'GAVELISTEN'
+      programme: 'Programmet',
+      venue: 'Stedet',
+      stay: 'Overnatning',
+      gifts: 'Gavelisten'
     }
   },
   programme: {
+    title: 'Programmet',
     info: {
       breakdown: `
         Vi anbefaler at I kommer en halv time før i slotskirken, så Andreas ikke skal stå og vente for lang tid alene på sin Mathilde.
@@ -47,6 +48,7 @@ export default {
     }
   },
   venue: {
+    title: 'Stedet',
     map: 'See på kort',
     copy: {
       intro: `
@@ -68,6 +70,7 @@ export default {
     }
   },
   stay: {
+    title: 'Overnatning',
     copy: {
       perks: `
         Vi har reserveret samtlige værelser på slottet, så dem der har lyst til at være sammen med os og danse til den lyse morgen, har mulighed for at overnatte og deltage i vores bryllupsbruch dagen efter.
@@ -86,6 +89,7 @@ export default {
     }
   },
   gifts: {
+    title: 'Gavelisten',
     copy: {
       underWay: 'Vores ønskeliste er stadig under udarbejdning, men kan findes her på siden snarest.',
       thanks: `

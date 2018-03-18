@@ -2,6 +2,8 @@ import { h, Component } from 'preact';
 
 import CSSTransitionGroup from 'preact-css-transition-group';
 
+import { isChrome } from '../components/browser-detection';
+
 export default class Footer extends Component {
   constructor(props) {
     super(props);
@@ -14,14 +16,27 @@ export default class Footer extends Component {
     };
   }
 
-  _enterSocial(side) {
-    const { showSocial } = this.state;
-    this.setState({ showSocial: { ...showSocial, [side]: true }});
+  componentDidMount() {
+    this._teaseProfile();
+  }
+
+  _enterSocial(side, restrictMobile = true) {
+    if (!restrictMobile || window.innerWidth > 768) {
+      const { showSocial } = this.state;
+      this.setState({ showSocial: { ...showSocial, [side]: true }});
+    }
   }
 
   _leaveSocial(side) {
     const { showSocial } = this.state;
     this.setState({ showSocial: { ...showSocial, [side]: false }});
+  }
+
+  _teaseProfile() {
+    setTimeout(() => this._enterSocial('left', false), 10000);
+    setTimeout(() => this._enterSocial('right', false), 10200);
+    setTimeout(() => this._leaveSocial('left', false), 14800);
+    setTimeout(() => this._leaveSocial('right', false), 15000);
   }
 
   render (props, state) {
@@ -39,7 +54,7 @@ export default class Footer extends Component {
             transitionEnterTimeout={350}
             transitionLeaveTimeout={350}
           >
-            {state.showSocial.left && <div onMouseLeave={() => this._leaveSocial('left')} className="bubble left"><img alt="Picture of Mathilde" src="/img/profile/mathilde.jpg" /></div>}
+            {state.showSocial.left && <div onMouseLeave={() => this._leaveSocial('left')} className="bubble left"><img alt="Picture of Mathilde" src={`/img/profile/mathilde.${isChrome ? 'webp' : 'jpg'}`} /></div>}
           </CSSTransitionGroup>
         </a>
         <span>
@@ -64,7 +79,7 @@ export default class Footer extends Component {
               transitionEnterTimeout={350}
               transitionLeaveTimeout={350}
             >
-              {state.showSocial.right && <div onMouseLeave={() => this._leaveSocial('right')} className="bubble right"><img alt="Picture of Andreas" src="/img/profile/andreas.jpg" /></div>}
+              {state.showSocial.right && <div onMouseLeave={() => this._leaveSocial('right')} className="bubble right"><img alt="Picture of Andreas" src={`/img/profile/andreas.${isChrome ? 'webp' : 'jpg'}`} /></div>}
             </CSSTransitionGroup>
           </a>
         </span>

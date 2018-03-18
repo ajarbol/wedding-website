@@ -2,6 +2,12 @@
  * Global document styles
  */
 
+@font-face
+  font-family: 'anemone'
+  src: url('/fonts/anemone-regular-webfont.woff2') format('woff2'), url('/fonts/anemone-regular-webfont.woff') format('woff')
+  font-weight: normal
+  font-style: normal;
+
 html, body
 	height: 100%
 
@@ -14,6 +20,30 @@ body
 
 #app
 	height: 100%
+
+.title__container
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-direction: column
+	margin-bottom: 30px
+	svg
+		g
+			fill: $color-black
+	h1
+		font-family: 'anemone'
+		font-size: 120px
+		font-weight: normal;
+		@media screen and (max-width: 567px)
+			font-size: 90px
+		@media screen and (max-width: 321px)
+			font-size: 80px
+	&.light
+		h1
+			color: $color-white
+		svg
+			g
+				fill: $color-white
 
 a
 	color: $color-cta-green

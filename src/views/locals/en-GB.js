@@ -1,13 +1,14 @@
 export default {
   hero: {
     links: {
-      programme: 'PROGRAMME',
-      venue: 'LOCATION',
-      stay: 'ACCOMMODATION',
-      gifts: 'WISH LIST'
+      programme: 'Programme',
+      venue: 'Location',
+      stay: 'Accommodation',
+      gifts: 'Wish list'
     }
   },
   programme: {
+    title: 'Programme',
     info: {
       breakdown: `
         We recommend arriving half an hour early at the castle chapel to not keep Andreas waiting alone for his Mathilde.
@@ -47,6 +48,7 @@ export default {
     }
   },
   venue: {
+    title: 'Location',
     map: 'View on map',
     copy: {
       intro: `
@@ -68,6 +70,7 @@ export default {
     }
   },
   stay: {
+    title: 'Accommodation',
     copy: {
       perks: `
         We have reserved every room the castle has to offer, so that those who wish to join us in dancing to the break of dawn, have a place to stay.
@@ -86,6 +89,7 @@ export default {
     }
   },
   gifts: {
+    title: 'Wish list',
     copy: {
       underWay: 'Our wish list is still under way, but can be found on this page very soon.',
       thanks: `
