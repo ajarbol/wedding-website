@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import { route } from 'preact-router';
+import { route, Link } from 'preact-router';
 
 import { IntlProvider } from 'preact-i18n';
 
@@ -64,15 +64,16 @@ export default class Layout extends Component {
 
   _getPage() {
     const url = this.props.path || this.props.url;
+    const { locale } = this.state;
     switch(url.toLowerCase()) {
       case '/programme':
-        return <Programme />;
+        return <Programme locale={locale} />;
       case '/venue':
-        return <Venue />;
+        return <Venue locale={locale} />;
       case '/stay':
-        return <Stay />;
+        return <Stay locale={locale} />;
       case '/gifts':
-        return <Gifts />;
+        return <Gifts locale={locale} />;
       default:
         return null;
     }
@@ -84,8 +85,9 @@ export default class Layout extends Component {
       1 - (scalePix / window.innerWidth)
     ];
     const page = this._getPage();
+    const { locale } = this.state;
     return (
-			<IntlProvider id="content" definition={this._getLocale(this.state.locale)}>
+			<IntlProvider definition={this._getLocale(locale)}>
         <div id="content" style={{ overflowY: page ? 'hidden' : 'auto' }}>
           <div
             className="layout_scale"
@@ -93,8 +95,14 @@ export default class Layout extends Component {
               transform: page ? `scale(${scaleX}, ${scaleY})` : 'scale(1)',
             }}
           >
+            <a
+              href={locale === 'da' ? '?l=en' : '?l=da'}
+              className="locale"
+            >
+              {locale === 'da' ? 'Say what?' : 'På dansk'}
+            </a>
   				  <Hero />
-            <Footer onLocaleChange={l => this.setState({ locale: this._getLocale(l) })} />
+            <Footer />
           </div>
           <CSSTransitionGroup
             component="main"

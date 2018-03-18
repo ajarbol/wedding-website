@@ -54,7 +54,7 @@ export default {
         Valget faldt dog på et af Danmarks ældste Palatia; <a href="http://www.dragsholm-slot.dk/slotshotel/historie" target="_blank" class="name" rel="noopener">Dragsholm Slot</a>.
         Her faldt vi for slottes rustikke stemning, Odsherreds flotte grønne og åbne omgivelser, samt den fredsfyldte idyl langt fra storbyens larm.
         Endvidere har slottet haft stor betydning for Andreas' familie, da det har været et festligt samlingspunkt for bla. Andreas' konfirmation og brødres barnedåb, med traditioner som skattejagt i slottes have organiseret af <a href="https://www.facebook.com/knud.skytte" target="_blank" class="name" rel="noopener">Morfar Knud</a>.
-        I forlængelse af dette inviterer vi derfor til bryllup på Dragsholm Slot.
+        I forlængelse af dette vil der derfor glæde os meget at inviterer jer til bryllup på Dragsholm Slot.
       `,
       ceremony: `
         Vielsen finder sted i slotskapellet, der med sin kapacitet på kun 100 personer vil danne en hyggelig atmosfære rundt om dagens vigtigste begivenhed.

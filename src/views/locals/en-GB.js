@@ -50,15 +50,15 @@ export default {
     map: 'View on map',
     copy: {
       intro: `
-        In our search for the perfect setting for our wedding we've come across several places, each of which had their unique charm.
+        In our search for the perfect setting for our wedding we've come across several places, each of which had their own unique charm.
         However, we eventually chosen one of the oldest Palatia in Denmark; <a href="http://www.dragsholm-slot.dk/slotshotel/historie" target="_blank" class="name" rel="noopener">Dragsholm Slot</a>.
-        We were won over by the castle's rustic atmosphere, the beautiful green and open surroundings in Odsherred, as well as the peaceful idyll far from the noises of the city.
-        Furthermore, the castle has been of great significance to Andreas' family, as it has been a staple festive venue hosting his confirmation and the christening of his brothers, rich with family traditions such as the treasurehunt on the castle grounds organised by <a href="https://www.facebook.com/knud.skytte" target="_blank" class="name" rel="noopener">Morfar Knud</a>.
-        It is with these reasons we invite you to join us for our wedding at Dragsholm Slot.
+        Here we were won over by the castle's rustic atmosphere, the beautiful green and open surroundings in Odsherred, as well as the peaceful serenity far from the noises of the city.
+        Furthermore, the castle has been of great significance to Andreas' family. It has been a staple festive venue hosting his confirmation and the christening of his brothers, rich with family traditions such as the treasurehunt on the castle grounds organised by <a href="https://www.facebook.com/knud.skytte" target="_blank" class="name" rel="noopener">Morfar Knud</a>.
+        With this in mind we felt that Dragsholm Slot was the ideal place for our wedding and we're very excited for you to join us.
       `,
       ceremony: `
         The wedding ceremony will take place in the castle chapel, which with its capacity of only around 100 people will create the perfect romantic setting around the most important event of the day.
-        The chapel is an integral part of the castle and is linked to the Knights Hall by 3 elegant living rooms setting the screne for the wedding party to follow.
+        The chapel is an integral part of the castle and is linked to the Knights Hall by 3 elegant living rooms setting the scene for the wedding party to follow.
         Fresh air can be enjoyed in the courtyard and a small bonfire will be lit after nightfall.
       `,
       stay: `
@@ -71,10 +71,10 @@ export default {
     copy: {
       perks: `
         We have reserved every room the castle has to offer, so that those who wish to join us in dancing to the break of dawn, have a place to stay.
-        Moreover they'll have to opportunity to accompany us to Sunday brunch the following day.
+        Moreover they'll have the opportunity to accompany us to Sunday brunch the following day.
       `,
       checkin: `
-        Check-in is at 15 pm, but we recommend, that you check in after the tour. Checkout is before 11 am the following day.
+        Check-in is at 15 pm, but we recommend, that you check in after the guided tour of the castle. Checkout is before 11 am the following day.
       `,
       price: `
         The accommodation costs 1000 DKK per person in double room and 1350 DKK in single room.

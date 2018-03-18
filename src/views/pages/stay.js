@@ -6,8 +6,7 @@ import PageWrapper from '../components/page-wrapper';
 const topStars = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'a13', 'a14', 'a15'];
 const bottomStars = ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10', 'b11'];
 
-export default (props, bla) => {
-  console.log(props, bla);
+export default () => {
   return (
     <PageWrapper className="page__stay">
       <div className="content">
