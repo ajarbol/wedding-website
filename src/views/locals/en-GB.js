@@ -4,14 +4,14 @@ export default {
       programme: 'PROGRAMME',
       venue: 'LOCATION',
       stay: 'ACCOMMODATION',
-      gifts: 'WISHLISH'
+      gifts: 'WISH LIST'
     }
   },
   programme: {
     info: {
       breakdown: `
         We recommend arriving half an hour early at the castle chapel to not keep Andreas waiting alone for his Mathilde.
-        After the wedding ceremony a reception will take place in the idyllic castle garden were champange and wedding cake will be served.
+        After the wedding ceremony a reception will take place in the idyllic castle garden were champagne and wedding cake will be served.
         Following that there will be a tour of the castle while the bride and groom are off having their picture taken on the castle grounds.
       `,
       toastmaster: `
@@ -53,7 +53,7 @@ export default {
         In our search for the perfect setting for our wedding we've come across several places, each of which had their own unique charm.
         However, we eventually chosen one of the oldest Palatia in Denmark; <a href="http://www.dragsholm-slot.dk/slotshotel/historie" target="_blank" class="name" rel="noopener">Dragsholm Slot</a>.
         Here we were won over by the castle's rustic atmosphere, the beautiful green and open surroundings in Odsherred, as well as the peaceful serenity far from the noises of the city.
-        Furthermore, the castle has been of great significance to Andreas' family. It has been a staple festive venue hosting his confirmation and the christening of his brothers, rich with family traditions such as the treasurehunt on the castle grounds organised by <a href="https://www.facebook.com/knud.skytte" target="_blank" class="name" rel="noopener">Morfar Knud</a>.
+        Furthermore, the castle has been of great significance to Andreas' family. It has been a staple festive venue hosting his confirmation and the christening of his brothers, rich with family traditions such as the treasure hunt on the castle grounds organised by <a href="https://www.facebook.com/knud.skytte" target="_blank" class="name" rel="noopener">Morfar Knud</a>.
         With this in mind we felt that Dragsholm Slot was the ideal place for our wedding and we're very excited for you to join us.
       `,
       ceremony: `
@@ -87,7 +87,7 @@ export default {
   },
   gifts: {
     copy: {
-      underWay: 'Our wishlist is still under way, but can be found on this page very soon.',
+      underWay: 'Our wish list is still under way, but can be found on this page very soon.',
       thanks: `
         We're very thankful to have Mathildes brother Lasse, and his girlfriend <a href="https://www.facebook.com/profile.php?id=100003710135467" class="name" target="_blank" rel="noopener">Maria</a>, as our gift coordinators.
         You can get a hold of them by e-mail: <a href="mailto:gavekoordinator@andreas-mathilde.com">gavekoordinator@andreas-mathilde.com</a>.
