@@ -33,10 +33,12 @@ export default class Footer extends Component {
   }
 
   _teaseProfile() {
-    setTimeout(() => this._enterSocial('left', false), 10000);
-    setTimeout(() => this._enterSocial('right', false), 10200);
-    setTimeout(() => this._leaveSocial('left', false), 14800);
-    setTimeout(() => this._leaveSocial('right', false), 15000);
+    if (this.props.allowProfile) {
+      setTimeout(() => this._enterSocial('left', false), 10000);
+      setTimeout(() => this._enterSocial('right', false), 10200);
+      setTimeout(() => this._leaveSocial('right', false), 13800);
+      setTimeout(() => this._leaveSocial('left', false), 14000);
+    }
   }
 
   render (props, state) {
@@ -54,7 +56,7 @@ export default class Footer extends Component {
             transitionEnterTimeout={350}
             transitionLeaveTimeout={350}
           >
-            {state.showSocial.left && <div onMouseLeave={() => this._leaveSocial('left')} className="bubble left"><img alt="Picture of Mathilde" src={`/img/profile/mathilde.${isChrome ? 'webp' : 'jpg'}`} /></div>}
+            {state.showSocial.left && props.allowProfile && <div onMouseLeave={() => this._leaveSocial('left')} className="bubble left"><img alt="Picture of Mathilde" src={`/img/profile/mathilde.${isChrome ? 'webp' : 'jpg'}`} /></div>}
           </CSSTransitionGroup>
         </a>
         <span>
@@ -79,7 +81,7 @@ export default class Footer extends Component {
               transitionEnterTimeout={350}
               transitionLeaveTimeout={350}
             >
-              {state.showSocial.right && <div onMouseLeave={() => this._leaveSocial('right')} className="bubble right"><img alt="Picture of Andreas" src={`/img/profile/andreas.${isChrome ? 'webp' : 'jpg'}`} /></div>}
+              {state.showSocial.right && props.allowProfile && <div onMouseLeave={() => this._leaveSocial('right')} className="bubble right"><img alt="Picture of Andreas" src={`/img/profile/andreas.${isChrome ? 'webp' : 'jpg'}`} /></div>}
             </CSSTransitionGroup>
           </a>
         </span>

@@ -90,35 +90,37 @@ export default class Layout extends Component {
     const { locale, hasOverflow } = this.state;
     return (
 			<IntlProvider definition={this._getLocale(locale)}>
-        <div id="content" style={{ overflowY: hasOverflow ? 'hidden' : 'initial' }}>
-          <div
-            className="layout_scale"
-            style={{
-              transform: page ? `scale(${scaleX}, ${scaleY})` : 'scale(1)',
-            }}
-          >
-            <a
-              href={locale === 'da' ? '?l=en' : '?l=da'}
-              className="locale"
+        <div id="content">
+          <div className="frame" style={{ overflowY: hasOverflow ? 'hidden' : 'initial' }}>
+            <div
+              className="layout_scale"
+              style={{
+                transform: page ? `scale(${scaleX}, ${scaleY})` : 'scale(1)',
+              }}
             >
-              {locale === 'da' ? 'Say what?' : 'På dansk, tak!'}
-            </a>
-  				  <Hero />
-            <Footer />
+              <a
+                href={locale === 'da' ? '?l=en' : '?l=da'}
+                className="locale"
+              >
+                {locale === 'da' ? 'Say what?' : 'På dansk, tak!'}
+              </a>
+    				  <Hero />
+            </div>
+            <CSSTransitionGroup
+              component="main"
+              transitionName={{
+                enter: 'layout__page_transition-enter',
+                enterActive: 'layout__page_transition-enter-active',
+                leave: 'layout__page_transition-leave',
+                leaveActive: 'layout__page_transition-leave-active',
+              }}
+              transitionEnterTimeout={350}
+              transitionLeaveTimeout={350}
+            >
+              {page}
+            </CSSTransitionGroup>
           </div>
-          <CSSTransitionGroup
-            component="main"
-            transitionName={{
-              enter: 'layout__page_transition-enter',
-              enterActive: 'layout__page_transition-enter-active',
-              leave: 'layout__page_transition-leave',
-              leaveActive: 'layout__page_transition-leave-active',
-            }}
-            transitionEnterTimeout={350}
-            transitionLeaveTimeout={350}
-          >
-            {page}
-          </CSSTransitionGroup>
+          <Footer allowProfile={!page} />
         </div>
 			</IntlProvider>
   	);

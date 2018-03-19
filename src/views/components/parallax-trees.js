@@ -33,6 +33,14 @@ export default class ParallaxTrees extends Component {
       paralaxXRatio: 1 - Math.abs(e.clientX / window.innerWidth),
     });
   }
+
+  _onOrientationChange(e) {
+    this.setState({
+      paralaxYRatio: 1 - Math.abs((e.beta + 180) / 360),
+      paralaxXRatio: 1 - Math.abs((e.gamma + 90) / 180),
+    });
+  }
+
   render() {
     const bottomPos = {
       back: `${this.state.paralaxYRatio * 25}px`,
