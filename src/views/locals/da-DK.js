@@ -13,7 +13,7 @@ export default {
       breakdown: `
         Vi anbefaler at I kommer en halv time før i slotskirken, så Andreas ikke skal stå og vente for lang tid alene på sin Mathilde.
         Efter vielsen vil receptionen finde sted i den idylliske slotshave, hvor der vil blive budt på bobler og bryllupskage.
-        Dernæst vil der være rundvisning på slottet, mens Brudeparret vil blive fotograferet på og omkring slottet.
+        Dernæst vil der være rundvisning på slottet, imens Brudeparret bliver fotograferet på og omkring slottet.
       `,
       toastmaster: `
         Der vil være en kort pause i programmet efter rundvisningen, inden vi byder på velkomstdrinks og middagen serveres.
@@ -84,7 +84,7 @@ export default {
         Booking sker ved at skrive til Dragsholm Slot på e-mail: <a href="mailto:info@dragsholm-slot.dk">info@dragsholm-slot.dk</a> og angive vores booking nummer som kan findes i invitationen.
       `,
       deadline: `
-        I bedes booke senest den <b>23. marts</b>.
+        Deadline for booking var den 23. marts. Fik I ikke booket vil det stadig være muligt ved hendvendelse til Dragsholm Slot.
       `
     }
   },

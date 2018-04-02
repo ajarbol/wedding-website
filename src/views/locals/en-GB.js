@@ -84,7 +84,7 @@ export default {
         Booking can be done by writing to Dragsholm Slot using e-mail: <a href="mailto:info@dragsholm-slot.dk">info@dragsholm-slot.dk</a>, and supplying our booking number, which can be found in the invitation.
       `,
       deadline: `
-        We urge you to please book by <b>23rd March</b> at the latest.
+        The booking deadline was 23rd March, but latecommers are still able to get a room by contacting Dragsholm Slot.
       `
     }
   },
