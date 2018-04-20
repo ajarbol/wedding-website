@@ -5,7 +5,7 @@
 #content
   height: 100%
   position: relative
-  overflow-y: hidden
+  //overflow-y: hidden
 
   .frame
     height: 100%
@@ -34,7 +34,7 @@
 
 .layout__page_transition-enter
   will-change: transform
-  transform: translate3d(0, 100%, 0)
+  transform: translate3d(0, 100vh, 0)
   opacity: 0.8
   transition: all 350ms cubic-bezier(0.165, 0.84, 0.44, 1)
 .layout__page_transition-enter-active
@@ -46,5 +46,5 @@
   transform: translate3d(0, 0, 0)
   opacity: 1
 .layout__page_transition-leave-active
-  transform: translate3d(0, 100%, 0)
+  transform: translate3d(0, 100vh, 0)
   opacity: 0.8

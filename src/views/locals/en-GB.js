@@ -91,10 +91,10 @@ export default {
   gifts: {
     title: 'Wish list',
     copy: {
-      underWay: 'Our wish list is still under way, but can be found on this page very soon.',
+      subjectToChange: 'Our wish list is still subject to change.',
       thanks: `
-        We're very thankful to have Mathildes brother Lasse, and his girlfriend <a href="https://www.facebook.com/profile.php?id=100003710135467" class="name" target="_blank" rel="noopener">Maria</a>, as our gift coordinators.
-        You can get a hold of them by e-mail: <a href="mailto:gavekoordinator@andreas-mathilde.com">gavekoordinator@andreas-mathilde.com</a>.
+        We're so happy to have Mathilde's brother Lasse, and his girlfriend <a href="https://www.facebook.com/profile.php?id=100003710135467" class="name" target="_blank" rel="noopener">Maria</a>, as our gift coordinators.
+        Whether you choose an item from the list below or get creative, please let them know at: <a href="mailto:gavekoordinator@andreas-mathilde.com">gavekoordinator@andreas-mathilde.com</a>.
       `
     }
   },

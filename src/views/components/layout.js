@@ -33,26 +33,7 @@ export default class Layout extends Component {
 
     this.state = {
       locale,
-      hasOverflow: true,
     };
-  }
-
-  componentDidMount() {
-    document.addEventListener('keydown', this._onKeyDown, false);
-    setTimeout(() => this.setState({ hasOverflow: false }), 2500);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this._onKeyDown, false);
-  }
-
-  _onKeyDown(e) {
-    switch (e.keyCode) {
-      case 27: // esc
-        route('/');
-        break;
-      default: break;
-    }
   }
 
   _getLocale(l) {
@@ -87,11 +68,11 @@ export default class Layout extends Component {
       1 - (scalePix / window.innerWidth)
     ];
     const page = this._getPage();
-    const { locale, hasOverflow } = this.state;
+    const { locale } = this.state;
     return (
 			<IntlProvider definition={this._getLocale(locale)}>
         <div id="content">
-          <div className="frame" style={{ overflowY: hasOverflow ? 'hidden' : 'initial' }}>
+          <div className="frame">
             <div
               className="layout_scale"
               style={{
@@ -105,6 +86,7 @@ export default class Layout extends Component {
                 {locale === 'da' ? 'Say what?' : 'På dansk, tak!'}
               </a>
     				  <Hero />
+              <Footer allowProfile={!page} />
             </div>
             <CSSTransitionGroup
               component="main"
@@ -120,7 +102,6 @@ export default class Layout extends Component {
               {page}
             </CSSTransitionGroup>
           </div>
-          <Footer allowProfile={!page} />
         </div>
 			</IntlProvider>
   	);
