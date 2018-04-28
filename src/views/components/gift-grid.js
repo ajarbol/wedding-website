@@ -17,7 +17,8 @@ export default class GiftGrid extends Component {
     this._onTouchMove = this._onTouchMove.bind(this);
     this._onTouchEnd = this._onTouchEnd.bind(this);
 
-    this._scaleFactor = window.innerWidth < 361 ? 1.5 : 2;
+    this._scaleFactor = window.innerWidth < 361 ? 1.6 : 2;
+    console.log(this.props);
   }
 
   componentDidMount() {
@@ -51,7 +52,9 @@ export default class GiftGrid extends Component {
   }
 
   _onTouchEnd(e) {
-    if (this.state.highlight) {
+    const newTouch = e.changedTouches[0];
+    const hasChanged = newTouch.pageX !== this.state.touchStart.pageX || newTouch.pageY !== this.state.touchStart.pageY;
+    if (this.state.highlight && hasChanged) {
       this._refs[this.state.highlight.index].blur();
     }
   }
@@ -87,14 +90,18 @@ export default class GiftGrid extends Component {
     }
   }
 
-  _handleBlur(e) {
+  _handleBlur() {
     this.setState({ highlight: null });
+    this.props.onBlur();
   }
 
   _handleFocus(e, index) {
     const el = e.target;
+    const scrollY = this.props.scrollTop();
+    //console.log(this.props.scrollContainer.scrollTop);
     const restingX = (((window.innerWidth - el.offsetWidth) / 2 - el.offsetLeft) / this._scaleFactor) - 3;
-    const restingY = (((window.innerHeight - el.offsetHeight) / 2 - el.offsetTop) / this._scaleFactor) + (window.scrollY / this._scaleFactor);
+    const restingY = (((window.innerHeight - el.offsetHeight) / 2 - el.offsetTop) / this._scaleFactor) + (scrollY / this._scaleFactor);
+    this.props.onFocus();
     this.setState({
       highlight: {
         index,
@@ -107,20 +114,6 @@ export default class GiftGrid extends Component {
   render({ gifts }, { highlight }) {
     return (
       <div className="gift__grid">
-        <CSSTransitionGroup
-          transitionName={{
-            enter: 'page__gifts_overlay_transition-enter',
-            enterActive: 'page__gifts_overlay_transition-enter-active',
-            leave: 'page__gifts_overlay_transition-leave',
-            leaveActive: 'page__gifts_overlay_transition-leave-active',
-          }}
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}
-        >
-          {highlight ? (
-            <div className="overlay" onClick={this._onTouchEnd} />
-            ) : null}
-        </CSSTransitionGroup>
         <ul>
           {gifts.map((g, i) => (
             <li

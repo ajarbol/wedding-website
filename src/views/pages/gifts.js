@@ -3,6 +3,7 @@ import { h, Component } from 'preact';
 import { MarkupText, Text } from 'preact-i18n';
 
 import PageWrapper from '../components/page-wrapper';
+import Overlay from '../components/overlay';
 import GiftGrid from '../components/gift-grid';
 import { isChrome } from '../components/browser-detection';
 
@@ -32,7 +33,7 @@ const gifts = [
   },
   {
     alt: 'eva_solo_frying_pan',
-    title: 'Stainless steel frying pan, 28cm',
+    title: 'Stainless steel frying pan,\n28cm',
     company: 'EVA SOLO',
     price: 'vejl. 799 kr.',
     imageUri: `/img/gifts/eva-solo.${ isChrome ? 'webp' : 'jpg'}`,
@@ -55,7 +56,7 @@ const gifts = [
   },
   {
     alt: 'rosendahl_opbevaring',
-    title: 'Opbevaringsglas, 1L/1.5L/2L',
+    title: 'Opbevaringsglas,\n1L/1.5L/2L',
     company: 'ROSENDAHL GRAND CRU',
     price: 'vejl. 199-249 kr.',
     imageUri: `/img/gifts/rosendahl_opbevaring.${ isChrome ? 'webp' : 'jpg'}`,
@@ -130,32 +131,43 @@ const mainGift = [{
   price: 'IBAN: DK6420003483205898'
 }];
 
-export default () => (
-  <PageWrapper className="page__gifts">
-    <div className="content">
-      <Title><Text id="gifts.title" /></Title>
-      <div className="info">
-        <p>
-          <MarkupText id="gifts.copy.thanks" />
-        </p>
-        <p>
-          <Text id="gifts.honeymoon" />
-        </p>
-      </div>
-      <GiftGrid gifts={mainGift} />
-      <img
-        alt="wedding_flowers_2"
-        src={`/img/flowers/gift_flowers_2.${ isChrome ? 'webp' : 'jpg'}`}
-        srcSet={`/img/flowers/gift_flowers_2.${ isChrome ? 'webp' : 'jpg'}, /img/flowers/gift_flowers_2@2x.${ isChrome ? 'webp' : 'jpg'} 2x, /img/flowers/gift_flowers_2@3x.${ isChrome ? 'webp' : 'jpg'} 3x`}
-      />
-      <GiftGrid gifts={gifts} />
-      <div className="flowers">
-        <img
-          alt="wedding_flowers"
-          src={`/img/flowers/gift_flowers.${ isChrome ? 'webp' : 'jpg'}`}
-          srcSet={`/img/flowers/gift_flowers.${ isChrome ? 'webp' : 'jpg'}, /img/flowers/gift_flowers@2x.${ isChrome ? 'webp' : 'jpg'} 2x, /img/flowers/gift_flowers@3x.${ isChrome ? 'webp' : 'jpg'} 3x`}
-        />
-      </div>
-    </div>
-  </PageWrapper>
-);
+export default class Layout extends Component {
+  constructor(props) {
+    super(props);
+  
+    this.scrollContainer = null;
+    this.overlay = null;
+  }
+  render (){
+    return (
+      <PageWrapper className="page__gifts">
+        <Overlay innerRef={overlay => { this.overlay = overlay; }} />
+        <div className="content" ref={content => { this.scrollContainer = content; }} >
+          <Title><Text id="gifts.title" /></Title>
+          <div className="info">
+            <p>
+              <MarkupText id="gifts.copy.thanks" />
+            </p>
+            <p>
+              <Text id="gifts.honeymoon" />
+            </p>
+          </div>
+          <GiftGrid gifts={mainGift} onFocus={() => this.overlay.show()} onBlur={() => this.overlay.hide()} scrollTop={() => this.scrollContainer.scrollTop} />
+          <img
+            alt="wedding_flowers_2"
+            src={`/img/flowers/gift_flowers_2.${ isChrome ? 'webp' : 'jpg'}`}
+            srcSet={`/img/flowers/gift_flowers_2.${ isChrome ? 'webp' : 'jpg'}, /img/flowers/gift_flowers_2@2x.${ isChrome ? 'webp' : 'jpg'} 2x, /img/flowers/gift_flowers_2@3x.${ isChrome ? 'webp' : 'jpg'} 3x`}
+          />
+          <GiftGrid gifts={gifts} onFocus={() => this.overlay.show()} onBlur={() => this.overlay.hide()} scrollTop={() => this.scrollContainer.scrollTop} />
+          <div className="flowers">
+            <img
+              alt="wedding_flowers"
+              src={`/img/flowers/gift_flowers.${ isChrome ? 'webp' : 'jpg'}`}
+              srcSet={`/img/flowers/gift_flowers.${ isChrome ? 'webp' : 'jpg'}, /img/flowers/gift_flowers@2x.${ isChrome ? 'webp' : 'jpg'} 2x, /img/flowers/gift_flowers@3x.${ isChrome ? 'webp' : 'jpg'} 3x`}
+            />
+          </div>
+        </div>
+      </PageWrapper>
+    );
+  }
+};

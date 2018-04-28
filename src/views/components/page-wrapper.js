@@ -1,6 +1,8 @@
 import { h } from 'preact';
 import { Link } from 'preact-router';
 
+import CSSTransitionGroup from 'preact-css-transition-group';
+
 import { isIE, isEdge } from '../components/browser-detection';
 
 export default ({ className, children, ...props }) => (
@@ -21,7 +23,6 @@ export default ({ className, children, ...props }) => (
     ) : <Link href="/" className="hot_corner" aria-label="Close page" />}
     <div
       className={`page_wrapper ${ (isIE || isEdge) ? '' : 'clip'}`}
-      style={{ minHeight: `${window.innerHeight - 10}px` }}
     >
       {children}
     </div>
