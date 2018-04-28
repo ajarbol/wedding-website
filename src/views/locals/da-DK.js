@@ -96,6 +96,11 @@ export default {
         Om I vælger en gave fra listen eller finder på noget selv så skriv til dem på e-mail: <a href="mailto:gavekoordinator@andreas-mathilde.com">gavekoordinator@andreas-mathilde.com</a>, så sikrer de, at andre ikke giver det samme som jer.
         Der kan stadig forkomme tillæg til gavelisten.
       `
-    }
+    },
+    honeymoon: `
+      Vores store ønske er at komme på en dejlig honeymoon til Hawaii.
+      Alle bidrag er velkomne til at gøre vores rejse ekstra fantastisk.
+      Oplysninger kan ses ved at trykke på billederne forneden.
+    `
   },
 }

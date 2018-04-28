@@ -49,7 +49,7 @@ const gifts = [
     alt: 'rosendahl_bordeaux',
     title: 'Bordeauxglas, 45cl',
     company: 'ROSENDAHL GRAND CRU',
-    amount: '2 stk.',
+    amount: '4 stk.',
     price: 'vejl. 169 kr.',
     imageUri: `/img/gifts/rosendahl_bordeaux.${ isChrome ? 'webp' : 'jpg'}`,
   },
@@ -93,6 +93,7 @@ const gifts = [
     alt: 'royal_multi',
     title: 'Multi cup, 25cl',
     company: 'ROYAL COPENHAGEN',
+    amount: '2 stk.',
     price: 'vejl. 599 kr.',
     imageUri: `/img/gifts/royal_multi.${ isChrome ? 'webp' : 'jpg'}`,
   },
@@ -126,7 +127,7 @@ const mainGift = [{
   company: 'HONEYMOON',
   imageUri: `/img/gifts/beach.${ isChrome ? 'webp' : 'jpg'}`,
   amount: 'SWIFT: NDEADKKK',
-  price: 'IBAN: DK9920001234567890'
+  price: 'IBAN: DK6420003483205898'
 }];
 
 export default () => (
@@ -138,15 +139,14 @@ export default () => (
           <MarkupText id="gifts.copy.thanks" />
         </p>
         <p>
-          Vores største ønske er en dejlig honeymoon til Hawaii. Alle bidrag er velkomne til at gøre vores rejse ekstra fantastisk.
+          <Text id="gifts.honeymoon" />
         </p>
       </div>
       <GiftGrid gifts={mainGift} />
       <img
-        className="gift_ribbon"
-        alt="wedding_ribbon"
-        src={`/img/ribbons/red_ribbon.${ isChrome ? 'webp' : 'jpg'}`}
-        srcSet={`/img/ribbons/red_ribbon.${ isChrome ? 'webp' : 'jpg'}, /img/ribbons/red_ribbon@2x.${ isChrome ? 'webp' : 'jpg'} 2x, /img/ribbons/red_ribbon@3x.${ isChrome ? 'webp' : 'jpg'} 3x`}
+        alt="wedding_flowers_2"
+        src={`/img/flowers/gift_flowers_2.${ isChrome ? 'webp' : 'jpg'}`}
+        srcSet={`/img/flowers/gift_flowers_2.${ isChrome ? 'webp' : 'jpg'}, /img/flowers/gift_flowers_2@2x.${ isChrome ? 'webp' : 'jpg'} 2x, /img/flowers/gift_flowers_2@3x.${ isChrome ? 'webp' : 'jpg'} 3x`}
       />
       <GiftGrid gifts={gifts} />
       <div className="flowers">

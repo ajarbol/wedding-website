@@ -96,6 +96,11 @@ export default {
         Whether you choose an item from the list below or get creative, please let them know at: <a href="mailto:gavekoordinator@andreas-mathilde.com">gavekoordinator@andreas-mathilde.com</a>.
         The wish list is still subject to additions.
       `
-    }
+    },
+    honeymoon: `
+      Our one big wish is a lovely honeymoon on Hawaii. 
+      All contributions are welcome to make our trip extra special.
+      Additional information kan be found by clicking on the pictures below.
+    `
   },
 }
