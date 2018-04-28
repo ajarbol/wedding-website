@@ -3,7 +3,6 @@ import { h, Component } from 'preact';
 import { MarkupText, Text } from 'preact-i18n';
 
 import PageWrapper from '../components/page-wrapper';
-import Overlay from '../components/overlay';
 import GiftGrid from '../components/gift-grid';
 import { isChrome } from '../components/browser-detection';
 
@@ -136,12 +135,10 @@ export default class Layout extends Component {
     super(props);
   
     this.scrollContainer = null;
-    this.overlay = null;
   }
   render (){
     return (
       <PageWrapper className="page__gifts">
-        <Overlay innerRef={overlay => { this.overlay = overlay; }} />
         <div className="content" ref={content => { this.scrollContainer = content; }} >
           <Title><Text id="gifts.title" /></Title>
           <div className="info">
@@ -152,13 +149,14 @@ export default class Layout extends Component {
               <Text id="gifts.honeymoon" />
             </p>
           </div>
-          <GiftGrid gifts={mainGift} onFocus={() => this.overlay.show()} onBlur={() => this.overlay.hide()} scrollTop={() => this.scrollContainer.scrollTop} />
+          <GiftGrid gifts={mainGift} scrollTop={() => this.scrollContainer.scrollTop} />
           <img
             alt="wedding_flowers_2"
+            className="middle_flowers"
             src={`/img/flowers/gift_flowers_2.${ isChrome ? 'webp' : 'jpg'}`}
             srcSet={`/img/flowers/gift_flowers_2.${ isChrome ? 'webp' : 'jpg'}, /img/flowers/gift_flowers_2@2x.${ isChrome ? 'webp' : 'jpg'} 2x, /img/flowers/gift_flowers_2@3x.${ isChrome ? 'webp' : 'jpg'} 3x`}
           />
-          <GiftGrid gifts={gifts} onFocus={() => this.overlay.show()} onBlur={() => this.overlay.hide()} scrollTop={() => this.scrollContainer.scrollTop} />
+          <GiftGrid gifts={gifts} scrollTop={() => this.scrollContainer.scrollTop} />
           <div className="flowers">
             <img
               alt="wedding_flowers"

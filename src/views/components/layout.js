@@ -8,8 +8,6 @@ import CSSTransitionGroup from 'preact-css-transition-group';
 import enLocale from '../locals/en-GB';
 import daLocale from '../locals/da-DK';
 
-import Footer from '../components/footer';
-
 import Programme from '../pages/programme';
 import Venue from '../pages/venue';
 import Gifts from '../pages/gifts';
@@ -104,7 +102,7 @@ export default class Layout extends Component {
               >
                 {locale === 'da' ? 'Say what?' : 'På dansk, tak!'}
               </a>
-    				  <Hero />
+    				  <Hero page={page} />
             </div>
             <CSSTransitionGroup
               component="main"
@@ -120,7 +118,6 @@ export default class Layout extends Component {
               {page}
             </CSSTransitionGroup>
           </div>
-          <Footer allowProfile={!page} />
         </div>
 			</IntlProvider>
   	);

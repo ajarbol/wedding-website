@@ -92,7 +92,7 @@ export default class GiftGrid extends Component {
 
   _handleBlur() {
     this.setState({ highlight: null });
-    this.props.onBlur();
+    // this.props.onBlur();
   }
 
   _handleFocus(e, index) {
@@ -101,13 +101,18 @@ export default class GiftGrid extends Component {
     //console.log(this.props.scrollContainer.scrollTop);
     const restingX = (((window.innerWidth - el.offsetWidth) / 2 - el.offsetLeft) / this._scaleFactor) - 3;
     const restingY = (((window.innerHeight - el.offsetHeight) / 2 - el.offsetTop) / this._scaleFactor) + (scrollY / this._scaleFactor);
-    this.props.onFocus();
+    // this.props.onFocus();
     this.setState({
       highlight: {
         index,
         restingX,
         restingY,
-        style: { transform: `scale(${this._scaleFactor}) translate3d(${restingX}px, ${restingY}px, 0)`, zIndex: 165, cursor: 'default' },
+        style: {
+          transform: `scale(${this._scaleFactor}) translate3d(${restingX}px, ${restingY}px, 0)`,
+          zIndex: 165,
+          cursor: 'default',
+          boxShadow: `0 0 10px 0 rgba(0, 0, 0, 0.20)`,
+        },
       }
     });
   }
