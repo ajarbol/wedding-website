@@ -19,7 +19,10 @@ export default ({ className, children, ...props }) => (
         </svg>
       </Link>
     ) : <Link href="/" className="hot_corner" aria-label="Close page" />}
-    <div className={`page_wrapper ${ (isIE || isEdge) ? '' : 'clip'}`}>
+    <div
+      className={`page_wrapper ${ (isIE || isEdge) ? '' : 'clip'}`}
+      style={{ minHeight: `${window.innerHeight - 10}px` }}
+    >
       {children}
     </div>
   </article>

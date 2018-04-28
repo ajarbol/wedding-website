@@ -9,9 +9,15 @@ export default class GiftGrid extends Component {
 
     this.state = {
       highlight: null,
+      touchStart: null,
     };
     this._refs = [];
     this._onKeyDown = this._onKeyDown.bind(this);
+    this._onTouchStart = this._onTouchStart.bind(this);
+    this._onTouchMove = this._onTouchMove.bind(this);
+    this._onTouchEnd = this._onTouchEnd.bind(this);
+
+    this._scaleFactor = window.innerWidth < 361 ? 1.5 : 2;
   }
 
   componentDidMount() {
@@ -20,6 +26,34 @@ export default class GiftGrid extends Component {
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this._onKeyDown, false);
+    this._refs.forEach(r => {
+      r.removeEventListener('touchstart', this._onTouchStart, false);
+      r.removeEventListener('touchmove', this._onTouchMove, false);
+      r.removeEventListener('touchend', this._onTouchEnd, false);
+    });
+  }
+
+  _onTouchStart(e) {
+    this.setState({ touchStart: e.targetTouches[0] });
+  }
+
+  _onTouchMove(e) {
+    if (this.state.highlight) {
+      e.preventDefault();
+      const newTouch = e.changedTouches[0];
+      const deltaX = (newTouch.pageX - this.state.touchStart.pageX) / this._scaleFactor;
+      const deltaY = (newTouch.pageY - this.state.touchStart.pageY) / this._scaleFactor;
+      const { restingX, restingY } = this.state.highlight;
+
+      const style = { ...this.state.highlight.style, transform: `scale(${this._scaleFactor}) translate3d(${restingX + deltaX}px, ${restingY + deltaY}px, 0)` };
+      this.setState({ highlight: { ...this.state.highlight, style,  }});
+    }
+  }
+
+  _onTouchEnd(e) {
+    if (this.state.highlight) {
+      this._refs[this.state.highlight.index].blur();
+    }
   }
 
   _onKeyDown(e) {
@@ -59,13 +93,14 @@ export default class GiftGrid extends Component {
 
   _handleFocus(e, index) {
     const el = e.target;
-    const scaleFactor = window.innerWidth < 361 ? 1.5 : 2;
-    const newX = (((window.innerWidth - el.offsetWidth) / 2 - el.offsetLeft) / scaleFactor) - 3;
-    const newY = (((window.innerHeight - el.offsetHeight) / 2 - el.offsetTop) / scaleFactor) + (window.scrollY / scaleFactor);
+    const restingX = (((window.innerWidth - el.offsetWidth) / 2 - el.offsetLeft) / this._scaleFactor) - 3;
+    const restingY = (((window.innerHeight - el.offsetHeight) / 2 - el.offsetTop) / this._scaleFactor) + (window.scrollY / this._scaleFactor);
     this.setState({
       highlight: {
         index,
-        style: { transform: `scale(${scaleFactor}) translate3d(${newX}px, ${newY}px, 0)`, zIndex: 165, cursor: 'default' },
+        restingX,
+        restingY,
+        style: { transform: `scale(${this._scaleFactor}) translate3d(${restingX}px, ${restingY}px, 0)`, zIndex: 165, cursor: 'default' },
       }
     });
   }
@@ -83,13 +118,20 @@ export default class GiftGrid extends Component {
           transitionLeaveTimeout={300}
         >
           {highlight ? (
-            <div className="overlay" />
+            <div className="overlay" onClick={this._onTouchEnd} />
             ) : null}
         </CSSTransitionGroup>
         <ul>
           {gifts.map((g, i) => (
             <li
-              ref={li => this._refs.push(li)}
+              ref={li => {
+                if (li) {
+                  this._refs.push(li);
+                  li.addEventListener('touchstart', this._onTouchStart, false);
+                  li.addEventListener('touchmove', this._onTouchMove, false);
+                  li.addEventListener('touchend', this._onTouchEnd, false);
+                }
+              }}
               style={highlight && highlight.index === i && highlight.style}
               role="button"
               tabIndex={0}

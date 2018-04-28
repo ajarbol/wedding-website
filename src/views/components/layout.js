@@ -36,6 +36,23 @@ export default class Layout extends Component {
     };
   }
 
+  componentDidMount() {
+    document.addEventListener('keydown', this._onKeyDown, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this._onKeyDown, false);
+  }
+
+  _onKeyDown(e) {
+    switch (e.keyCode) {
+      case 27: // esc
+        route('/');
+        break;
+      default: break;
+    }
+  }
+
   _getLocale(l) {
     switch(l.toLowerCase()) {
       case 'en':

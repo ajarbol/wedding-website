@@ -91,10 +91,10 @@ export default {
   gifts: {
     title: 'Gavelisten',
     copy: {
-      subjectToChange: 'Vores ønskeliste er stadig under udarbejdning.',
       thanks: `
         Vi er glade for at have Mathildes bror Lasse og hans kæreste <a href="https://www.facebook.com/profile.php?id=100003710135467" class="name" target="_blank" rel="noopener">Maria</a> som gavekoordinatore.
         Om I vælger en gave fra listen eller finder på noget selv så skriv til dem på e-mail: <a href="mailto:gavekoordinator@andreas-mathilde.com">gavekoordinator@andreas-mathilde.com</a>, så sikrer de, at andre ikke giver det samme som jer.
+        Der kan stadig forkomme tillæg til gavelisten.
       `
     }
   },

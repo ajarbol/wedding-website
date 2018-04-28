@@ -76,8 +76,9 @@ const gifts = [
   },
   {
     alt: 'peugeot_salt_pepper',
-    title: 'Salt og peber, 18cm chokolade',
+    title: 'Salt og peber, 18cm stainless',
     company: 'PEUGEOT',
+    amount: '2 stk.',
     price: 'vejl. 399 kr.',
     imageUri: `/img/gifts/salt_pepper.${ isChrome ? 'webp' : 'jpg'}`,
   },
@@ -119,6 +120,15 @@ const gifts = [
   }
 ];
 
+const mainGift = [{
+  alt: 'hawaii',
+  title: 'Hawaii',
+  company: 'HONEYMOON',
+  imageUri: `/img/gifts/beach.${ isChrome ? 'webp' : 'jpg'}`,
+  amount: 'SWIFT: NDEADKKK',
+  price: 'IBAN: DK9920001234567890'
+}];
+
 export default () => (
   <PageWrapper className="page__gifts">
     <div className="content">
@@ -128,9 +138,16 @@ export default () => (
           <MarkupText id="gifts.copy.thanks" />
         </p>
         <p>
-          <Text id="gifts.copy.subjectToChange" />
+          Vores største ønske er en dejlig honeymoon til Hawaii. Alle bidrag er velkomne til at gøre vores rejse ekstra fantastisk.
         </p>
       </div>
+      <GiftGrid gifts={mainGift} />
+      <img
+        className="gift_ribbon"
+        alt="wedding_ribbon"
+        src={`/img/ribbons/red_ribbon.${ isChrome ? 'webp' : 'jpg'}`}
+        srcSet={`/img/ribbons/red_ribbon.${ isChrome ? 'webp' : 'jpg'}, /img/ribbons/red_ribbon@2x.${ isChrome ? 'webp' : 'jpg'} 2x, /img/ribbons/red_ribbon@3x.${ isChrome ? 'webp' : 'jpg'} 3x`}
+      />
       <GiftGrid gifts={gifts} />
       <div className="flowers">
         <img
