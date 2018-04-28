@@ -4,7 +4,6 @@ import { Link } from 'preact-router';
 import { Text } from 'preact-i18n';
 
 import HeroDevider from '../components/hero-devider';
-import Footer from '../components/footer';
 
 import { isChrome } from '../components/browser-detection';
 
@@ -21,7 +20,7 @@ const imagePreloads = [
   '/stars/b1.png'
 ];
 
-export default ({ page }) => (
+export default () => (
   <div className="hero hero__container">
     <div className="hero__graphic" style={{ backgroundImage: `url('/img/hero.${isChrome ? 'webp' : 'jpg'}')` }} />
     <div className="hero__title">
@@ -50,6 +49,5 @@ export default ({ page }) => (
         </div>
       </nav>
     </div>
-    <Footer allowProfile={!page} />
   </div>
 );
