@@ -118,6 +118,27 @@ const gifts = [
     company: 'GEORGE JENSEN',
     price: 'vejl. 699 kr.',
     imageUri: `/img/gifts/george_bloom.${ isChrome ? 'webp' : 'jpg'}`,
+  },
+  {
+    alt: 'weber_go_anywhere',
+    title: 'Gasgrill Go-anywhere',
+    company: 'WEBER',
+    price: 'vejl. 999 kr.',
+    imageUri: `/img/gifts/weber.${ isChrome ? 'webp' : 'jpg'}`,
+  },
+  {
+    alt: 'weber_go_anywhere_bag',
+    title: 'Taske Go-anywhere',
+    company: 'WEBER',
+    price: 'vejl. 289 kr.',
+    imageUri: `/img/gifts/weber_cover.${ isChrome ? 'webp' : 'jpg'}`,
+  },
+  {
+    alt: 'bang_olufsen_a1',
+    title: 'Beoplay A1, natural',
+    company: 'BANG & OLUFSEN',
+    price: 'vejl. 1899 kr.',
+    imageUri: `/img/gifts/bogoa.${ isChrome ? 'webp' : 'jpg'}`,
   }
 ];
 

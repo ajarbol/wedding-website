@@ -18,7 +18,6 @@ export default class GiftGrid extends Component {
     this._onTouchEnd = this._onTouchEnd.bind(this);
 
     this._scaleFactor = window.innerWidth < 361 ? 1.6 : 2;
-    console.log(this.props);
   }
 
   componentDidMount() {
@@ -98,7 +97,6 @@ export default class GiftGrid extends Component {
   _handleFocus(e, index) {
     const el = e.target;
     const scrollY = this.props.scrollTop();
-    //console.log(this.props.scrollContainer.scrollTop);
     const restingX = (((window.innerWidth - el.offsetWidth) / 2 - el.offsetLeft) / this._scaleFactor) - 3;
     const restingY = (((window.innerHeight - el.offsetHeight) / 2 - el.offsetTop) / this._scaleFactor) + (scrollY / this._scaleFactor);
     // this.props.onFocus();
